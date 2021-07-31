@@ -13,7 +13,7 @@ body{
 
     .fullbody{
         position: relative;
-        top: -100px;
+        top: 0px;
     }
     
     
@@ -351,11 +351,18 @@ h1{
     flex-wrap: wrap;
 }
 
-
+.carousel-item > img{
+    height: 500px;
+}
 
 @media (max-width: 650px) {
 
    
-    
+    .carousel-item > img{
+        height: 190px;
+    }
     
    }
+
+
+ 
