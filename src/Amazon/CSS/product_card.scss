@@ -33,15 +33,15 @@ body{
     overflow: inherit;
     cursor: pointer;
 
-    margin: 10px;
+    margin: 0px;
    
     padding-left: 4px;
     padding: 8px;
-    width: 313px;
+    width: 335px;
     background-color: #2b374286;
 
     height: 450px;
-
+margin-bottom: 20px;
 
     h2{
         color: rgb(247, 238, 238);
@@ -60,7 +60,7 @@ body{
         flex-wrap: wrap; 
 
   .product_component_product{
-           margin: 10px;
+        //    margin: 10px;
            padding-bottom: 0px;
             width: 120px;
             height: 160px;
@@ -101,13 +101,13 @@ body{
     overflow: inherit;
     cursor: pointer;
     position: relative;
-    top: -41px;
-    margin: 10px;
+    // top: -41px;
+    // margin: 10px;
    
     padding: 20px;
-    width: 313px;
+    width: 330px;
     background-color: #ffffff;
-
+margin-bottom: 20px;
     height: 450px;
 
 
