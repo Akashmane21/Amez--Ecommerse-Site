@@ -39,9 +39,9 @@ body{
     padding: 8px;
     width: 335px;
     background-color: #2b374286;
-
+    margin-left: 5px;
     height: 450px;
-margin-bottom: 20px;
+    margin-bottom: 20px;
 
     h2{
         color: rgb(247, 238, 238);
@@ -58,7 +58,6 @@ margin-bottom: 20px;
     display: flex;
         justify-content: space-around;
         flex-wrap: wrap; 
-
   .product_component_product{
         //    margin: 10px;
            padding-bottom: 0px;
@@ -183,7 +182,6 @@ left: 8px;
 
 .Slider_body{
   
-   
     padding: 20px;
     width: auto;
 //  height: 320px;
@@ -205,12 +203,12 @@ left: 8px;
     display: flex;
         justify-content: space-around;
         flex-wrap: wrap; 
-        overflow: hidden;
+        // overflow: hidden;
     
 
             img{
                 height: 170px;
-                width: 160px;
+                width: auto;
                 position: relative;
                 left: -10px;
             }
@@ -243,33 +241,6 @@ left: 8px;
 
 
 
-
-.app {
-    --gutter: 20px;
-  }
-  
-  .app {
-    padding: var(--gutter) 0;
-    display: grid;
-    width: 100%;
-    height: 200px;
-    grid-gap: var(--gutter) 0;
-    grid-template-columns: var(--gutter) 1fr var(--gutter);
-    align-content: start;
-  }
-  
-
-  h2{
-      color: blue;
-  }
-  .app > * {
-    grid-column: 2 / -2;
-  }
-  
-  .app > .full {
-    grid-column: 1 / -1;
-  }
-  
   .hs {
    display: flex;
    flex-direction: row;
@@ -287,40 +258,10 @@ left: 8px;
     margin: 0;
     color: #575757;
     font-size: 30px;
-    h2{
-        font-size: 20px;
-        color: blue;
-
-        &:hover{
-            width: 110px;
-            color: black;
-            cursor: pointer;
-            border-bottom: 1px solid red;
-        }
-    }
+   
   }
   
-  .app {
-    //   margin: 10px;
-    width: 97%;
-    height: 400px;
-    position: relative;
-    left: 10px;
-    background-color: #ffffff;
-    margin-bottom: 3    0px;
-    }
-  
-  .hs > li,
-  .item {
-    scroll-snap-align: center;
-    padding: calc(var(--gutter) / 2 * 1.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    // background: rgb(182, 99, 99);
-    border-radius: 8px;
-  }
+ 
   
 
 
@@ -388,4 +329,6 @@ h1{
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000; 
   }
-  
+  .slider{
+      background-color: rgb(255, 255, 255);
+  }

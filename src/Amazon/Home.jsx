@@ -86,7 +86,7 @@ render() {
 
 
 
-     <div class="app">
+     <div class="slider">
   <h1>Today’s Deals </h1><h6>see all offers</h6>
   
   <ul class="hs">
@@ -121,7 +121,7 @@ render() {
 
 
 
-<div class="app">
+<div class="slider">
   <h1>Up to 60% off | Products from Indian startups <h2>see all offers</h2></h1>
   
   <ul class="hs">
@@ -191,7 +191,7 @@ render() {
 
      
 
-<div class="app">
+     <div class="slider">
   <h1>Best Sellers in Sports, Fitness & Outdoors <h2>see more</h2></h1>
   
   <ul class="hs">
