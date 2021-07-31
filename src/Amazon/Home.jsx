@@ -26,13 +26,15 @@ render() {
 <div className="fullbody">
 
     <div className="first_row">
-     <Card
-     title="Everyday essentials"
-      name1="Immunity & healthcare" img1 = "https://images-eu.ssl-images-amazon.com/images/G/31/img18/HPC/GW/Desktop-Qc-1x_1._SY116_CB431329533_.jpg"
-      name2="Women's personal care" img2 ="https://images-eu.ssl-images-amazon.com/images/G/31/img18/HPC/GW/Desktop-Qc-1x_2._SY116_CB431329535_.jpg"
-      name3="Men's grooming"  img3="https://images-eu.ssl-images-amazon.com/images/G/31/img18/HPC/GW/Desktop-Qc-1x_3._SY116_CB431329535_.jpg"
-      name4="Cleaning essentials"  img4="https://images-eu.ssl-images-amazon.com/images/G/31/img18/HPC/GW/Desktop-Qc-1x_4._SY116_CB431329535_.jpg"
-     />
+    <Card
+     title="Styles for Men | Up to 70% off"
+      name1="Clothing" img1="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Fashion/EVENT/WRS_Dec/GW/BTF/PC/MF-372-232/186-116/1._SY116_CB413570652_.jpg"
+       name2="Footware" img2="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Fashion/EVENT/WRS_Dec/GW/BTF/PC/MF-372-232/186-116/2._SY116_CB413570652_.jpg"
+       name3="Watches" img3="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Fashion/EVENT/WRS_Dec/GW/BTF/PC/MF-372-232/186-116/3._SY116_CB413570652_.jpg"
+       name4="Gags & Luggage" img4="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Fashion/EVENT/WRS_Dec/GW/BTF/PC/MF-372-232/186-116/5._SY116_CB413570652_.jpg" />
+     
+    
+     
      <Card 
      title="Top picks for your home"
        name1="AC's" img1="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Desktop_QC_tile_graphic_186x116_1._SY116_CB414480869_.jpg"
@@ -58,15 +60,18 @@ render() {
 <SingleImgCard 
          title="Electronics & more Under ₹1,499" link="See More"  img = "https://images-eu.ssl-images-amazon.com/images/G/31/img20/2021/1499_store/hindi/1x_2x_1x._SY304_CB657649450_.jpg"
        />
-     <Card
-     title="Styles for Men | Up to 70% off"
-      name1="Clothing" img1="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Fashion/EVENT/WRS_Dec/GW/BTF/PC/MF-372-232/186-116/1._SY116_CB413570652_.jpg"
-       name2="Footware" img2="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Fashion/EVENT/WRS_Dec/GW/BTF/PC/MF-372-232/186-116/2._SY116_CB413570652_.jpg"
-       name3="Watches" img3="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Fashion/EVENT/WRS_Dec/GW/BTF/PC/MF-372-232/186-116/3._SY116_CB413570652_.jpg"
-       name4="Gags & Luggage" img4="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Fashion/EVENT/WRS_Dec/GW/BTF/PC/MF-372-232/186-116/5._SY116_CB413570652_.jpg" />
-     
     
-      
+ 
+    <Card
+     title="Everyday essentials"
+      name1="Immunity & healthcare" img1 = "https://images-eu.ssl-images-amazon.com/images/G/31/img18/HPC/GW/Desktop-Qc-1x_1._SY116_CB431329533_.jpg"
+      name2="Women's personal care" img2 ="https://images-eu.ssl-images-amazon.com/images/G/31/img18/HPC/GW/Desktop-Qc-1x_2._SY116_CB431329535_.jpg"
+      name3="Men's grooming"  img3="https://images-eu.ssl-images-amazon.com/images/G/31/img18/HPC/GW/Desktop-Qc-1x_3._SY116_CB431329535_.jpg"
+      name4="Cleaning essentials"  img4="https://images-eu.ssl-images-amazon.com/images/G/31/img18/HPC/GW/Desktop-Qc-1x_4._SY116_CB431329535_.jpg"
+     />
+
+
+
        <SingleImgCard 
          title="For a productive home office" link="See More"  img = "https://images-eu.ssl-images-amazon.com/images/G/31/img21/CEPC/GW/Dashboard/WFH2_GW_DC_379x304._SY304_CB661185471_.jpg"  
        />
@@ -83,8 +88,6 @@ render() {
 
      </div>
     
-
-
 
      <div class="slider">
   <h1>Today’s Deals </h1><h6>see all offers</h6>
@@ -106,6 +109,8 @@ render() {
   
 </div>
 
+
+
 {/* 
 <div className="first_rw">
       <h1>Top Programing Languages Books📗 </h1>
@@ -122,7 +127,7 @@ render() {
 
 
 <div class="slider">
-  <h1>Up to 60% off | Products from Indian startups <h2>see all offers</h2></h1>
+  <h1>Up to 60% off | Products from Indian startups <h6>see all offers</h6></h1>
   
   <ul class="hs">
     <li class="item"><Slider1 img="https://m.media-amazon.com/images/I/41jzjo0hDwL._AC_SY200_.jpg" /></li>
