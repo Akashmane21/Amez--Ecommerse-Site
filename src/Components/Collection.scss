@@ -3,9 +3,9 @@
     flex-direction: row;
     justify-content: space-between;
     overflow-x: scroll;
-
+    background-color: #1b1f23;
+padding-bottom: 20px;
     .Coll_block{
-        background-color: #1b1f23;
         margin: 5px;
         padding: 5px;
         border-radius: 2px;
@@ -37,3 +37,16 @@ padding: 10px;
 
     }
 }
+
+
+
+@media (max-width: 650px) {
+
+   
+.Coll{
+        h2{
+            font-size: 20px;
+    
+        }
+    }
+   }
