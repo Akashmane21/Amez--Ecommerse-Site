@@ -8,7 +8,7 @@ import SingleImgCard from './Component/Singleimgcard'
 import Upper from './Component/Upper'
 import Header from "../header/Header";
 import './CSS/product_card.scss'
-
+import Collection from "../Components/Collection";
 
 
 
@@ -22,7 +22,7 @@ render() {
 
   <Header />
      <Upper />
-
+<Collection />
 <div className="fullbody">
 
     <div className="first_row">

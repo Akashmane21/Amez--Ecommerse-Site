@@ -1,11 +1,11 @@
 
 .fullbody{
     position: relative;
-    top: -250px;
+    // top: -250px;
 }
 
 body{
-    background-color: #eaeded;
+    background-color: #0d1117;
 }
 
 
@@ -38,7 +38,7 @@ body{
     padding-left: 4px;
     padding: 8px;
     width: 313px;
-    background-color: #ffffff;
+    background-color: #30363d;
 
     height: 450px;
 
@@ -352,7 +352,7 @@ h1{
 }
 
 .carousel-item > img{
-    height: 500px;
+    height: 300px;
 }
 
 @media (max-width: 650px) {
@@ -365,4 +365,27 @@ h1{
    }
 
 
- 
+         
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(29, 25, 78, 0); 
+    background-color: #0a192f;
+  
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(4, 197, 240); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }
+  

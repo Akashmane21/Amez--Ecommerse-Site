@@ -1,0 +1,39 @@
+.Coll_body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-x: scroll;
+
+    .Coll_block{
+        background-color: #1b1f23;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 2px;
+        margin-left: 20px;
+
+        img{
+            height: 80px;
+        }
+
+        h3{
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: white;
+        }
+    }
+}
+
+
+.Coll{
+padding: 10px;
+    h2{
+        text-align: left;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 30px;
+        color: white;
+
+    }
+}
