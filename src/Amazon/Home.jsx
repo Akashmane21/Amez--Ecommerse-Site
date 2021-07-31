@@ -106,7 +106,7 @@ render() {
   
 </div>
 
-
+{/* 
 <div className="first_rw">
       <h1>Top Programing Languages Books📗 </h1>
     <img alt="product_img"  id="books" src="https://images-na.ssl-images-amazon.com/images/I/513vVH%2BxV%2BL.jpg" />
@@ -115,7 +115,7 @@ render() {
 
     <img alt="product_img"  id="books" src="https://miro.medium.com/max/2560/1*R4vZiipvoxscDCJ0DKUe4A.png" />
 
-</div>
+</div> */}
 
 
 
@@ -220,7 +220,7 @@ render() {
           
 </div>
       
-      <div className="first_rw">
+      {/* <div className="first_rw">
       <h1>Some Interesting / Motivational Books📗📖 </h1>
       <div className="bookimgs">
     <img alt="product_img"  id="books" src="http://kristiecook.com/wp-content/uploads/2016/10/Desktop-wallpaper-Books-are-proof.jpg" />
@@ -229,7 +229,7 @@ render() {
 
     <img alt="product_img" id="books" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf4-lO3U6LM29wXXyaLPVYWdOxidMgtb4hHg&usqp=CAU" />
     </div>
-</div>
+</div> */}
 
 
 

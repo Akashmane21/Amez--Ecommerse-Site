@@ -55,15 +55,15 @@ body{
 
 
     .product_component{
-    display: flex;
+        display: flex;
         justify-content: space-around;
         flex-wrap: wrap; 
-  .product_component_product{
-        //    margin: 10px;
+
+
+       .product_component_product{
            padding-bottom: 0px;
             width: 120px;
             height: 160px;
-            // background-color: red;
             overflow: hidden;
             
 
