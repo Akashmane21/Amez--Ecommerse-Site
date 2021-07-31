@@ -17,7 +17,7 @@ return (
 
 <div className="Slider_body">
     <div className="Slider_product">
-        <img src={props.img} />
+        <img alt="product_img" src={props.img} />
         
     </div>
 

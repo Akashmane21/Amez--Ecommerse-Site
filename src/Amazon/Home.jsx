@@ -1,9 +1,7 @@
 
 import { Component } from "react";
-import react  from 'react'
 // import Menu from './Component/Menu'
 import Card from './Component/Cards'
-import Footer from './Component/Footer'
 import Slider1 from './Component/Slider1'
 
 import SingleImgCard from './Component/Singleimgcard'
@@ -111,11 +109,11 @@ render() {
 
 <div className="first_rw">
       <h1>Top Programing Languages Books📗 </h1>
-    <img id="books" src="https://images-na.ssl-images-amazon.com/images/I/513vVH%2BxV%2BL.jpg" />
-    <img id="books" src="https://careerkarma.com/blog/wp-content/uploads/2019/07/best-python-books.jpg" />
-    <img id="books" src="https://www.edureka.co/blog/wp-content/uploads/2019/11/Top-10-Java-Books-to-Learn-Java.jpg" />
+    <img alt="product_img"  id="books" src="https://images-na.ssl-images-amazon.com/images/I/513vVH%2BxV%2BL.jpg" />
+    <img alt="product_img"  id="books" src="https://careerkarma.com/blog/wp-content/uploads/2019/07/best-python-books.jpg" />
+    <img alt="product_img"  id="books" src="https://www.edureka.co/blog/wp-content/uploads/2019/11/Top-10-Java-Books-to-Learn-Java.jpg" />
 
-    <img id="books" src="https://miro.medium.com/max/2560/1*R4vZiipvoxscDCJ0DKUe4A.png" />
+    <img alt="product_img"  id="books" src="https://miro.medium.com/max/2560/1*R4vZiipvoxscDCJ0DKUe4A.png" />
 
 </div>
 
@@ -225,11 +223,11 @@ render() {
       <div className="first_rw">
       <h1>Some Interesting / Motivational Books📗📖 </h1>
       <div className="bookimgs">
-    <img id="books" src="http://kristiecook.com/wp-content/uploads/2016/10/Desktop-wallpaper-Books-are-proof.jpg" />
-    <img id="books" src="https://i.ytimg.com/vi/gVZk-29pjdQ/maxresdefault.jpg" />
-    <img id="books" src="https://lh3.googleusercontent.com/proxy/JreOuWu8sl30Z39udTLQZiwQElwo_vCaS5qvBXC4Jtz6n9jdppp76ohmny2kE4HFdUadzxbAfqTWi8hUrkCTAUhlnR_erIeI-6YdoSXIvnc" />
+    <img alt="product_img"  id="books" src="http://kristiecook.com/wp-content/uploads/2016/10/Desktop-wallpaper-Books-are-proof.jpg" />
+    <img alt="product_img" id="books" src="https://i.ytimg.com/vi/gVZk-29pjdQ/maxresdefault.jpg" />
+    <img alt="product_img" id="books" src="https://lh3.googleusercontent.com/proxy/JreOuWu8sl30Z39udTLQZiwQElwo_vCaS5qvBXC4Jtz6n9jdppp76ohmny2kE4HFdUadzxbAfqTWi8hUrkCTAUhlnR_erIeI-6YdoSXIvnc" />
 
-    <img id="books" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf4-lO3U6LM29wXXyaLPVYWdOxidMgtb4hHg&usqp=CAU" />
+    <img alt="product_img" id="books" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf4-lO3U6LM29wXXyaLPVYWdOxidMgtb4hHg&usqp=CAU" />
     </div>
 </div>
 

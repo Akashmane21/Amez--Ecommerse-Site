@@ -14,7 +14,7 @@ return (
         <div className="img_container">
         <h2>{props.title}</h2>
             <div className="img_component">
-                <img src={props.img} />
+                <img alt="product_img" src={props.img} />
             </div>
 
             <button  id="btn">{props.link}</button>
