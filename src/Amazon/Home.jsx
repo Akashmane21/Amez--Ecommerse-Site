@@ -7,8 +7,8 @@ import Slider1 from './Component/Slider1'
 import SingleImgCard from './Component/Singleimgcard'
 import Upper from './Component/Upper'
 import Header from "../header/Header";
-import './CSS/product_card.scss'
-import Collection from "../Components/Collection";
+import './../CSS/product_card.scss'
+import Collection from "../Components/Collection/Collection";
 
 
 
@@ -20,7 +20,7 @@ render() {
       
      <>
 
-  <Header />
+  {/* <Header /> */}
      <Upper />
 <Collection />
 <div className="fullbody">
@@ -197,7 +197,7 @@ render() {
      
 
      <div class="slider">
-  <h1>Best Sellers in Sports, Fitness & Outdoors <h2>see more</h2></h1>
+  <h1>Best Sellers in Sports, Fitness & Outdoors <h6>see more</h6></h1>
   
   <ul class="hs">
     <li class="item"><Slider1 img="https://m.media-amazon.com/images/I/41TXCe7NGML._AC_SY200_.jpg" /></li>
@@ -212,9 +212,6 @@ render() {
     <li class="item"><Slider1 img="https://m.media-amazon.com/images/I/41JL8rlKeuL._AC_SY200_.jpg" /></li>
     <li class="item"><Slider1 img="https://m.media-amazon.com/images/I/51kyYWvUMqL._AC_SY200_.jpg" /></li>
     <li class="item"><Slider1 img="https://m.media-amazon.com/images/I/51l3zcSn7+L._AC_SY200_.jpg" /></li>
-    
-
-    
 
     
   </ul>

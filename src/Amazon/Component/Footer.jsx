@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import '../CSS/product_card.scss'
+import '../../CSS/product_card.scss'
 
 
 

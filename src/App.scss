@@ -1,0 +1,39 @@
+.block{
+  display: flex;
+  flex-direction: row;
+
+
+
+
+
+
+}
+
+
+
+
+@media (max-width: 650px) {
+
+  .left_area{
+  display: none;
+  }
+  .right_area{
+    width: 100%;
+  }
+  
+}
+
+
+
+
+@media (min-width: 650px) {
+
+  .left_area{
+    width: 25%;
+    background-color: #1b1f23;
+  }
+  
+  .right_area{
+    width: 75%;
+  }
+}
