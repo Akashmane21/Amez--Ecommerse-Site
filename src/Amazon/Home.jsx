@@ -6,7 +6,7 @@ import Slider1 from './Component/Slider1'
 
 import SingleImgCard from './Component/Singleimgcard'
 import Upper from './Component/Upper'
-import Header from "../header/Header";
+// import Header from "../header/Header";
 import './../CSS/product_card.scss'
 import Collection from "../Components/Collection/Collection";
 

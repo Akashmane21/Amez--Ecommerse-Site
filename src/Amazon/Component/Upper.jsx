@@ -12,11 +12,13 @@ return (
 <div class="carousel-inner">
 
 <div class="carousel-item active " data-interval="10000">
-<img src="https://neilpatel.com/wp-content/uploads/2018/05/pasted-image-0-320.png" class="d-block w-100" alt="..."  />
+<img src="https://m.media-amazon.com/images/S/aplus-media/vc/784ee17d-508b-4c2b-a22f-3d582d95326b._CR0,0,970,300_PT0_SX970__.png" class="d-block w-100" alt="..." />
+
+
 
 </div>
 <div class="carousel-item" data-interval="2000">
-<img src="https://c4.wallpaperflare.com/wallpaper/153/263/761/advertising-art-digital-logo-wallpaper-preview.jpg" class="d-block w-100" alt="..." />
+<img src="https://www.designyourway.net/blog/wp-content/uploads/2017/12/CeaG_rH64.jpg" class="d-block w-100" alt="..." />
 
 </div>
 <div class="carousel-item" data-interval="2000">
@@ -24,11 +26,11 @@ return (
 
 </div>
 <div class="carousel-item" data-interval="2000">
-<img src="https://i.pinimg.com/originals/c3/df/f8/c3dff88b7129438af19b7e759a97b119.jpg" class="d-block w-100" alt="..." />
+<img src="https://www.myimaginestore.com/images/series-6/series-6-1.jpg" class="d-block w-100" alt="..." />
 
 </div>
 <div class="carousel-item">
-<img src="https://www.myimaginestore.com/images/series-6/series-6-1.jpg" class="d-block w-100" alt="..." />
+<img src="https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-taobao-e-commerce-appliances-promotion-poster-banner-image_155307.jpg" class="d-block w-100" alt="..."  />
 
 </div>
 

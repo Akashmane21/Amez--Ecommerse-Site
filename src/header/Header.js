@@ -34,16 +34,21 @@ function Header() {
           All
           </button>
           <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+           {/* eslint-disable-next-line */}
             <li><a class="dropdown-item" href="#">Electronics</a></li>
+                       {/* eslint-disable-next-line */}
             <li><a class="dropdown-item" href="#">Mobile phones</a></li>
+                       {/* eslint-disable-next-line */}
             <li><a class="dropdown-item" href="#">Home</a></li>
+                       {/* eslint-disable-next-line */}
             <li><a class="dropdown-item" href="#">Fashion</a></li>
-
+                       {/* eslint-disable-next-line */}
             <li><a class="dropdown-item" href="#">Aplliances</a></li>
-
+                       {/* eslint-disable-next-line */}
             <li><a class="dropdown-item" href="#">Kids</a></li>
-
+           {/* eslint-disable-next-line */}
             <li><a class="dropdown-item" href="#">Books</a></li>
+                       {/* eslint-disable-next-line */}
             <li><a class="dropdown-item" href="#">Shoes</a></li>
 
         </ul>
