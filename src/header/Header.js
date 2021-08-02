@@ -22,7 +22,8 @@ function Header() {
 
         <a href="/" className="logo">
         {/* <img alt="feedback animation" src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png" /> */}
-          <span className="logo-name">Shopie</span>
+          <span className="logo-name">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg>          Shopie</span>
         </a><br />
 
 
@@ -30,30 +31,27 @@ function Header() {
 
         <div className="search">
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle drop" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          All
-          </button>
-          <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
-           {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Electronics</a></li>
-                       {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Mobile phones</a></li>
-                       {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Home</a></li>
-                       {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Fashion</a></li>
-                       {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Aplliances</a></li>
-                       {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Kids</a></li>
-           {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Books</a></li>
-                       {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Shoes</a></li>
+        {/* <label for="cars">Choose a car:</label> */}
+  <select name="cars" id="cars">
+    <option value="All" className="item">All</option>
+    <option value="Home" className="item">Home</option>
+    <option value="Fashion" className="item">Fashion</option>
+    <option value="Electronics" className="item">Electronics</option>
+    <option value="Mobiles" className="item">Mobiles</option>
+    <option value="Dresses" className="item">Dresses</option>
+    <option value="Shoes" className="item">Shoes</option>
+    <option value="Watches" className="item">Watches</option>
+    <option value="Appliances" className="item">Appliances</option>
+    <option value="Kids" className="item">Kids</option>
+    <option value="Books" className="item">Books</option>
 
-        </ul>
+  </select>
+
+
+      
+         
       </div>
-        <input className="search" placeholder="Search here" />
+        <input className="search1" placeholder="Search here" />
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </div>
 

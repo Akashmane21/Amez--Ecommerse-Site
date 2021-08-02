@@ -5,7 +5,10 @@ import Leftmenu from './Components/Leftmenu/Leftmenu';
 function App() {
   return (
     <div className="App">
+    <div className="Menu">
+
      <Header />
+    </div>
 
      <div className="block">
        <div className="left_area">

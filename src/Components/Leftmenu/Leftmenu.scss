@@ -1,5 +1,74 @@
-.Left{
-    background-color: black;
-    height: 100vh;
-    width: 200px;
+.Left{   
+    padding: 20px;
+    color: white;
+
+
+    h1{
+        color: wheat;
+        font-size: 22px;
+        font-weight: 500;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+
+    .Head{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #30363d;
+        padding: 4px;
+        border-radius: 10px;
+        width: 190px;
+        
+    }
+}
+.bottom_icon{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 4px;
+    border-radius: 10px;
+    width: 190px;
+
+    h1{
+        padding-left: 10px;
+    }
+}
+
+.list{
+    align-items: flex-end;
+    padding-top: 10px;
+    ul{
+        li{
+            a{
+                display: flex;
+                align-items: center;
+                font-size: 20px;
+                padding-left: 30px;
+                color: wheat;
+                border-radius: 10px;
+
+                &:hover{
+                    background-color: #30363d;
+                    color: orange;
+                }
+
+                img{
+                    height: 50px;
+                }
+
+            }
+        }
+    }
+}
+
+.Bottom{
+    h1{
+        font-size: 20px;
+        font-family:Arial, Helvetica, sans-serif;
+        // padding-left: 10px;
+
+    }
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
