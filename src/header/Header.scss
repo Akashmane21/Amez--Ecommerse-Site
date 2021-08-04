@@ -239,12 +239,12 @@ font-weight: 700;
 
 .cartlen{
   background-color: rgba(255, 0, 0, 0.815);
-  color: rgb(255, 255, 255);
+  color: rgb(241, 236, 234);
   padding:1px 4px;
   border-radius: 70%;
   font-size: 13px;
   position: relative;
-  top: -10px;
+  top: -16px;
   left: 30px;
 }
 
@@ -285,7 +285,7 @@ border: 0px;
   position: relative;
   // top: -50px;
 }
-button, input, select, textarea, optgroup {
+ input, select, textarea, optgroup {
   font: inherit;
   margin: 0;
   color: rgb(250, 246, 246);
@@ -348,4 +348,22 @@ left: 30px;
 .pos1{
   position: relative;
   left: 40px;
+}
+
+.login_div >button{
+  background-color: orange;
+  padding: 4px 15px;
+  border-radius: 3px;
+  outline-width: 0px;
+  margin-top: 7px;
+  margin-left: 20px;
+  border: 0px;
+  font-size: 20px;
+  // color: white;
+}
+
+.login_div >button:hover{
+  background-color: white;
+  color: rgb(68, 66, 62);
+  cursor: pointer;
 }

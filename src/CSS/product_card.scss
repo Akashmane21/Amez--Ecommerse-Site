@@ -12,7 +12,20 @@ body{
 }
 .home{
     background-color: #eaeded;
+
+    h2{
+        color: black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        height: 50px;
+        overflow: hidden;
+        padding-left: 8px;
+
+    }
 }
+
+
 
 @media (max-width: 1150px) {
 
@@ -352,4 +365,11 @@ h1{
   }
   .slider{
       background-color: rgb(255, 255, 255);
+  }
+
+
+  .products{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
   }

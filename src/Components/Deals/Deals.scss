@@ -1,0 +1,86 @@
+.Deals{
+    padding: 10px;
+  width: 212px;
+  overflow: hidden;
+  background-color: rgb(252, 252, 252);
+  margin: 7px;
+//   border-radius: 10px;
+
+  
+  img{
+      height: 200px;
+      width: auto;
+  }
+
+  h2{
+      font-size: 20px;
+  }
+
+  &:hover{
+      position: relative;
+      top: -10px;
+      
+      box-shadow: 0 10px 30px -15px black;
+      cursor: pointer;
+  }
+}
+
+
+
+.Price{
+    font-size: 20px;
+    color: rgb(252, 113, 0);
+
+}
+
+.mrp{
+    text-decoration: line-through;
+}
+
+span{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: black;
+    text-decoration: none;
+}
+
+.cart_btn{
+    display: flex;
+    justify-content: flex-end;
+
+    button{
+        border: 0px;
+        border-radius: 10px;
+        align-items: center;
+        background-color: rgba(216, 215, 215, 0.329);
+        padding:4px 9px;
+        margin-top: 20px;
+        margin: 10px;
+
+        &:hover{
+            background-color: rgba(255, 166, 0, 0.295);    
+                box-shadow: 0 10px 30px -15px black;
+
+        }
+
+    }
+
+}
+
+
+
+@media (max-width: 650px) {
+    .Deals{
+    width: 175px;
+    margin: 1px;
+
+    
+  
+  img{
+    height: 150px;
+    width: auto;
+}
+    }
+
+}
