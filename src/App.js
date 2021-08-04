@@ -13,8 +13,10 @@ function App() {
 
   useEffect(() => {
 
+    
     if(localStorage.getItem("cartData")==null){
       localStorage.setItem('cartData',"[]");
+      window.location.reload(false);
      }
 
   else{
