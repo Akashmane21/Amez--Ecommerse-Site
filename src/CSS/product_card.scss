@@ -10,20 +10,7 @@ body{
     background-color: #0d1117;
     background-color: #eaeded;
 }
-.home{
-    background-color: #eaeded;
 
-    h2{
-        color: black;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: bold;
-        font-size: 30px;
-        height: 50px;
-        overflow: hidden;
-        padding-left: 8px;
-
-    }
-}
 
 
 
@@ -333,6 +320,13 @@ h1{
     .carousel-item > img{
         height: 190px;
     }
+
+    .home{
+    
+        h2{
+            font-size: 20px;
+        }
+    }
     
    }
 
@@ -373,3 +367,18 @@ h1{
       flex-direction: row;
       flex-wrap: wrap;
   }
+
+  .home{
+    background-color: #eaeded;
+
+    h2{
+        color: black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        height: 50px;
+        overflow: hidden;
+        padding-left: 8px;
+
+    }
+}

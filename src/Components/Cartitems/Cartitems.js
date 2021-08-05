@@ -62,7 +62,7 @@ const [actualP, setactualP] = useState(ap)
            
            <div>
           
-            <div className="Categary">
+            <div className="Categary Flex">
           {item.Categary}
           <button onClick={del}>
 

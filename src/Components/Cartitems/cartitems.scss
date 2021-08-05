@@ -75,7 +75,7 @@
     }
 }
 
-.Categary {
+.Flex {
     display: flex;
     justify-content: space-between;
 }
@@ -89,10 +89,14 @@
     }
     .incbtn{
         margin-top: 0px;
+        padding-top: 0px;
     }
-    .Categary >button {
+    .Categary  {
         position: relative;
-        top: -370px;
+        top: -390px;
+    }
+    .items{
+        padding-top: 30px;
     }
 
 }
