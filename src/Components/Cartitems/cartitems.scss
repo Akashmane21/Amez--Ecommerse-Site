@@ -58,6 +58,28 @@
     color: rgb(234, 0, 255);
     font-size: 25px;
 }
+.Categary > button{
+    background-color: rgba(255, 0, 0, 0.089);
+    border: 0px;
+    border-radius: 50%;
+    padding: 9px;
+    // margin-left: 30px;
+
+    &:focus{
+        background-color: orange;
+        border: 0px;
+    }
+    &:active{
+        background-color: orange;
+        border: 0px;
+    }
+}
+
+.Categary {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 @media (max-width: 650px) {
 
@@ -65,4 +87,12 @@
         display: block;
 
     }
+    .incbtn{
+        margin-top: 0px;
+    }
+    .Categary >button {
+        position: relative;
+        top: -370px;
+    }
+
 }

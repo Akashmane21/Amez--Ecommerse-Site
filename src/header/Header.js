@@ -1,13 +1,14 @@
-import React from "react";
+import React , { useState } from "react";
 import "./Header.scss";
-// import Headroom from "react-headroom";
-// import Zoom from 'react-reveal/Zoom';
 import {NavLink} from 'react-router-dom'
 import Headroom from "react-headroom";
+import {useCounter} from '../Context/CartContext'
 
 
 function Header() {
- 
+  const {setCartdata ,Cartdata} = useCounter()
+// eslint-disable-next-line
+const [length, setlength] = useState(Cartdata.length)
 
   return (
     <>
@@ -44,7 +45,7 @@ function Header() {
 
  
         <NavLink exact activeClassName = "active_class" to="/Cart">
-              <span className="cartlen">2</span>
+              <span className="cartlen">{length}</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg>
               </NavLink>
             </li>
@@ -110,7 +111,7 @@ function Header() {
             <li>
             <NavLink exact activeClassName = "active_class" to="/Cart">
 
-              <span className="cartlen">1</span>
+              <span className="cartlen">{length}</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg>
            </NavLink>
               
