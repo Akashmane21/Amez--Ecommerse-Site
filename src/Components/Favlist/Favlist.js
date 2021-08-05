@@ -3,11 +3,12 @@ import '../Deals/Deals.scss'
 import '../Cartitems/cartitems.scss'
 import './Favlist.scss'
 import {useCounter} from '../../Context/CartContext'
+import {NavLink} from 'react-router-dom'
 
 
 function Favlist({item}) {
     // eslint-disable-next-line
-    const {setCartdata ,Cartdata , wishlist , setwishlist } = useCounter()
+    const {setCartdata ,Cartdata , wishlist , setwishlist ,   Desdata, setDesdata} = useCounter()
         // eslint-disable-next-line
 
    
@@ -32,11 +33,23 @@ function Favlist({item}) {
 
 
     }
+
+    
+    function Save(){
+        setDesdata(item)
+      
+       
+      }
+
+
     return (
 <>
 
 <div className="Wishbox">
+<NavLink exact activeClassName = "active_class" to="/Detail" onClick={Save}>
+
   <img src={item.Image1} alt="" />
+  </NavLink>
   <div className="wishbtns">
       <button className="green" onClick={addtoCart}>
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="28" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg>

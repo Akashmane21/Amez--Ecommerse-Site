@@ -2,11 +2,12 @@ import React  , {useState} from 'react'
 import '../Deals/Deals.scss'
 import './cartitems.scss'
 import {useCounter} from '../../Context/CartContext'
+import {NavLink} from 'react-router-dom'
 
 
 function Cartitems({item}) {
     // eslint-disable-next-line
-    const {setCartdata ,Cartdata} = useCounter()
+    const {setCartdata ,Cartdata , wishlist , setwishlist ,   Desdata, setDesdata} = useCounter()
         // eslint-disable-next-line
 
     const [num, setnum] = useState(1)
@@ -49,12 +50,26 @@ const [actualP, setactualP] = useState(ap)
 
 
     }
+
+    
+    function Save(){
+        setDesdata(item)
+      
+       
+      }
+
+
     return (
         <div className="items">
-           <img src={item.Image1} alt="" />
-           <div>
-           <h2>{item.Name}</h2>
+                <NavLink exact activeClassName = "active_class" to="/Detail" onClick={Save}>
 
+           <img src={item.Image1} alt="" />
+           </NavLink>
+           <div>
+           <NavLink exact activeClassName = "active_class" to="/Detail" onClick={Save}>
+
+           <h2>{item.Name}</h2>
+</NavLink>
 
            <div className="rate">
                 <div className="Price">
