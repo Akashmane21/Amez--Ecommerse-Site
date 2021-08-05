@@ -57,6 +57,8 @@ span{
         background-color: rgba(216, 215, 215, 0.329);
         padding:4px 9px;
         margin-top: 20px;
+        outline: none;
+
         margin: 5px;
 
         &:hover{
@@ -105,6 +107,8 @@ span{
     position: relative;
     top: -300px;
     left: 100px;
+    outline: none;
+
 
 }
 
@@ -114,4 +118,19 @@ span{
     }
 }
 
+}
+
+
+.Deal_btn {
+    button{
+        border: 0px;
+        background-color: none;
+        margin: 0px;
+        padding: 0px;
+        align-items: flex-start;
+        text-align: left;
+        outline: none;
+        // background-color: white;
+
+    }
 }

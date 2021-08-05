@@ -12,8 +12,10 @@ function CartContextProider(props){
 
             const Wishlist =   JSON.parse(localStorage.getItem("Wishlist"));
             const [wishlist, setwishlist] = useState(Wishlist)
+
+            const [Desdata, setDesdata] = useState([])
  
-    const value={ Cartdata ,setCartdata  , wishlist , setwishlist}
+    const value={ Cartdata ,setCartdata  , wishlist , setwishlist , Desdata, setDesdata}
 
     return(
         <CartContext.Provider value={value}>

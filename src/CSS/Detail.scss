@@ -1,0 +1,29 @@
+.Detail_box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .images{
+        img{
+            height: 200px;
+            width: auto;
+        }
+    }
+
+    .info{
+
+    }
+}
+
+@media (min-width: 650px) {
+    .images{
+        width: 40%;
+       
+    }
+
+    .info{
+        width: 60%;
+
+    }
+
+}
