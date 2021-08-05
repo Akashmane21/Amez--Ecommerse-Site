@@ -5,37 +5,29 @@ import {useCounter} from '../../Context/CartContext'
 
 function Deals({Product}) {
     // eslint-disable-next-line
-    const {setCartdata ,Cartdata} = useCounter()
+    const {setCartdata ,Cartdata , wishlist , setwishlist } = useCounter()
     const [BG, setBG] = useState(false)
 
     const [status, setstatus] = useState(false)
-  
-    //    const data =   JSON.parse(localStorage.getItem("cartData"));
-       // eslint-disable-next-line
-    //    const [Cartdata, setCartdata] = useState(data)
 
 
-   const item = {
-        id : `${Product.id}`,
-        Name : `${Product.Name}`,
-        Categary : `${Product.Categary}`,
-        Discount : `${Product.Discount}`,
-        Image1 : `${Product.Image1}`,
-        Image2 : `${Product.Image2}`,
-        Image3 : `${Product.Image3}`,
-        MRP : `${Product.MRP}`,
-        Price : `${Product.Price}`,
-        Trend : `${Product.Trend}`,
-        Ratings : `${Product.Ratings}`
-   }
+
 
     function Add(){
        
-        Cartdata.push(item)
+        Cartdata.push(Product)
         var string = JSON.stringify(Cartdata);
         localStorage.setItem('cartData',string);
         setstatus(true)
        
+    }
+
+    function Fav(){
+      setBG(true)
+      wishlist.push(Product)
+      var favdata = JSON.stringify(wishlist);
+      localStorage.setItem('Wishlist',favdata);
+      setstatus(true)
     }
 
 
@@ -61,7 +53,7 @@ function Deals({Product}) {
                 <div className="cart_btn">
 
                 <div className="Like">
-                <button onClick={()=> setBG(!BG)}>
+                <button onClick={Fav}>
 
                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill={BG ? "red" : "none"} stroke={BG ? "red" : "black"} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
                 </button>

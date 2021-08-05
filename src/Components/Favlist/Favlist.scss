@@ -1,0 +1,47 @@
+.Wishbox{
+    width: 230px;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    img{
+        height: 230px;
+        width: auto;
+    }
+
+    .wishbtns{
+        display: flex;
+
+        button{
+            width: 50%;
+            border: 0px;
+            padding: 10px 10px;
+            font-size: 20px;
+            &:hover{
+                background-color: white;
+            }
+        }
+        
+    }
+}
+
+.green{
+    background-color: rgba(0, 128, 43, 0.425);
+}
+
+.red{
+    background-color: rgba(255, 81, 0, 0.349);
+}
+
+
+@media (max-width: 650px) {
+    .Wishbox{
+        width: 300px;
+
+        img{
+            height: 300px;
+            width: auto;
+        }
+    
+    }
+
+}

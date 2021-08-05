@@ -36,3 +36,20 @@ display: flex;
         
 
 }
+
+.noitems{
+    height: 60vh;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    h1{
+        font-size: 35px;
+        color: rgb(182, 78, 78);
+        text-transform: uppercase;
+        font-weight: 700;
+        padding-right: 20px;
+        margin: 10px;
+    }
+}

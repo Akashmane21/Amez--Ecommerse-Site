@@ -1,4 +1,4 @@
-import React , { useState } from "react";
+import React , { useState  , useEffect} from "react";
 import "./Header.scss";
 import {NavLink} from 'react-router-dom'
 import Headroom from "react-headroom";
@@ -9,7 +9,17 @@ function Header() {
   // eslint-disable-next-line
   const {setCartdata ,Cartdata} = useCounter()
 // eslint-disable-next-line
-const [length, setlength] = useState(Cartdata.length)
+const [length, setlength] = useState(0)
+
+useEffect(() => {
+  if(Cartdata){
+
+    setlength(Cartdata.length)
+  }
+         // eslint-disable-next-line
+}, [Cartdata])
+
+
 
   return (
     <>
@@ -37,10 +47,10 @@ const [length, setlength] = useState(Cartdata.length)
               </a>
             </li>
         <li>
-              <a href="#Fav" className="pos">
+        <NavLink exact activeClassName = "active_class" to="/Wishlist" className="pos">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" viewBox="0 0 24 24" fill="red" stroke="red" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
 
-              </a>
+             </NavLink>
             </li>
         <li>
 
@@ -90,13 +100,14 @@ const [length, setlength] = useState(Cartdata.length)
        
         
             <li>
-              <a href="#Fav" >
+            <NavLink exact activeClassName = "active_class" to="/Wishlist">
+
               <div className="header_btn">
 
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 24 24" fill="red" stroke="red" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
               <h5>Wishlist</h5>
               </div>
-              </a>
+              </NavLink>
             </li>
             <li>
               <a href="#Notifications" className="menu_icon">

@@ -1,26 +1,17 @@
 import '../App.scss';
-import Home from './Home' 
 import Header from '../header/Header';
 import Leftmenu from '../Components/Leftmenu/Leftmenu';
 import {useEffect} from 'react'
+import Fav from './Fav';
 
 
 
-function Homepage() {
+function WishlistPage() {
 
 
   useEffect(() => {
 
     
-    if(localStorage.getItem("cartData")==null){
-      localStorage.setItem('cartData',"[]");
-      localStorage.setItem('Wishlist',"[]");
-      window.location.reload(false);
-     }
-
-  else{
-      console.log(localStorage.getItem("cartData"));
-     }
 
   }, [])
 
@@ -37,7 +28,7 @@ function Homepage() {
         <Leftmenu />
        </div>
        <div className="right_area">
-           <Home />
+    <Fav/>
        </div>
      </div>
       
@@ -46,4 +37,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default WishlistPage;

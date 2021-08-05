@@ -7,10 +7,13 @@ import {useCounter} from '../../Context/CartContext'
 function Cartitems({item}) {
     // eslint-disable-next-line
     const {setCartdata ,Cartdata} = useCounter()
+        // eslint-disable-next-line
 
     const [num, setnum] = useState(1)
     const [bigp, setbigp] = useState(2)
     var ap = parseInt(`${item.Price}`.replace(/,/g, ''));
+
+
 
 const [Total, setTotal] = useState(ap)
 //  eslint-disable-next-line
@@ -51,14 +54,21 @@ const [actualP, setactualP] = useState(ap)
            <img src={item.Image1} alt="" />
            <div>
            <h2>{item.Name}</h2>
-            <div className="Price">
-        <span>Price :</span>   ₹{item.Price}
-           </div>
+
+
+           <div className="rate">
+                <div className="Price">
+              <span>Price :</span>   ₹{item.Price}
+              </div>
            
            <div className="MRP">
-        <span>M.R.P :</span> <span className="mrp"> ₹{item.MRP}</span>  ({item.Discount})
+                 <span>M.R.P :</span> <span className="mrp"> ₹{item.MRP}</span>  ({item.Discount})
             </div>
            </div>
+           
+           </div>
+
+
            
            <div>
           
@@ -81,8 +91,9 @@ const [actualP, setactualP] = useState(ap)
 
             </div>
 
-            <div className="Price total">
-        <span>Total :</span>   ₹{Total}
+
+            <div className="Price total ">
+               <span>Total :</span>   ₹{Total}
            </div>
 
 
