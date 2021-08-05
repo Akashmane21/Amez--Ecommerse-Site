@@ -6,6 +6,7 @@ import {useCounter} from '../Context/CartContext'
 
 
 function Header() {
+  // eslint-disable-next-line
   const {setCartdata ,Cartdata} = useCounter()
 // eslint-disable-next-line
 const [length, setlength] = useState(Cartdata.length)
