@@ -1,0 +1,38 @@
+.cart{
+    background-color: #eaeded;
+    padding: 20px;
+
+   .title{
+display: flex;
+
+  
+    h1{
+        font-size: 35px;
+        color: rgb(131, 127, 127);
+        text-transform: uppercase;
+        font-weight: 700;
+        padding-right: 20px;
+        margin: 10px;
+
+    }
+
+}
+
+}
+
+.cart_iems{
+    // background-color: red;
+}
+
+@media (min-width: 650px) {
+  
+        
+          
+    .title>h1{
+                padding-right: 0px;
+                font-size: 40px;
+
+            }
+        
+
+}

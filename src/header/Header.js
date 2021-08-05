@@ -2,13 +2,12 @@ import React from "react";
 import "./Header.scss";
 // import Headroom from "react-headroom";
 // import Zoom from 'react-reveal/Zoom';
-// import {NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import Headroom from "react-headroom";
-import {useCounter} from '../Context/CartContext'
 
 
 function Header() {
-  const {Count  } = useCounter()
+ 
 
   return (
     <>
@@ -22,11 +21,12 @@ function Header() {
 
 
 
-        <a href="/" className="logo">
+      <NavLink exact activeClassName = "active_class" to="/">
+
         {/* <img alt="feedback animation" src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png" /> */}
           <span className="logo-name">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg>          Shopie</span>
-        </a><br />
+        </NavLink>
 
         <ul className= "mob_icon">
         <li>
@@ -43,10 +43,10 @@ function Header() {
         <li>
 
  
-              <a href="#Cart" className="menu_icon "> 
-              <span className="cartlen">{Count}</span>
+        <NavLink exact activeClassName = "active_class" to="/Cart">
+              <span className="cartlen">2</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg>
-              </a>
+              </NavLink>
             </li>
             
 
@@ -83,16 +83,6 @@ function Header() {
 
 
 
-        {/* <input className="menu-btn" type="checkbox" id="menu-btn" />
-        <label
-          className="menu-icon"
-          htmlFor="menu-btn"
-          style={{color: "red"}}
-        >
-          <span className= "navicon"></span>
-        </label> */}
-
-
 
 
                 <ul className= "menu">
@@ -118,10 +108,11 @@ function Header() {
               
             </li>
             <li>
-              <a href="#Cart" className="menu_icon"> 
-              <span className="cartlen">{Count}</span>
+            <NavLink exact activeClassName = "active_class" to="/Cart">
+
+              <span className="cartlen">1</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg>
-              </a>
+           </NavLink>
               
             </li>
             <li className="login_div">
