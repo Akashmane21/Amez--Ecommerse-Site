@@ -56,7 +56,7 @@ console.log(Data);
         <Upper />
      
         <Collection />
-        <h2> Hot Deals 🔰</h2>
+        <h1> Hot Deals 🔥</h1>
 
         <div className="products">
           {Productsdata ? Productsdata.map((Product , index)=> <Deals Product={Product} key={index}/>) : ""}

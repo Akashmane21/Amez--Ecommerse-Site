@@ -255,17 +255,7 @@ margin-right: 25px;
 border: 0px;
 }
 
-.dropdown{
 
-  ul{
-    li{
-      a{
-
-        
-      }
-    }
-  }
-}
 
 .item{
   color: black;
@@ -294,7 +284,11 @@ border: 0px;
   border: 0px;
   outline-width: 0px;
   margin-right: 15px;
-  border-radius: 7px;
+  // border-radius: 7px;
+
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .item{
@@ -312,7 +306,8 @@ margin-top: 10px;
 margin-bottom: 10px;
   }
 .search1{
-width: 150px;  
+width: 280px;  
+padding-left: 10px;
 }
 
 .menu{
@@ -322,6 +317,13 @@ width: 150px;
 .item{
   // padding: 19px;
   font-size: 10px;
+}
+
+.header{
+}
+
+.dropdown{
+  display: none;
 }
 
 }

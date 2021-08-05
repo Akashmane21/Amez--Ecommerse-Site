@@ -57,7 +57,6 @@ const [length, setlength] = useState(Cartdata.length)
 
         <div className="search">
         <div class="dropdown">
-        {/* <label for="cars">Choose a car:</label> */}
   <select name="cars" id="cars">
     <option value="All" className="item">All</option>
     <option value="Home" className="item">Home</option>
