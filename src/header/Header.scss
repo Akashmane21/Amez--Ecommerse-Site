@@ -369,3 +369,14 @@ left: 30px;
   color: rgb(68, 66, 62);
   cursor: pointer;
 }
+
+.header_btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+}
+
+a{
+  padding: 0px;
+}
