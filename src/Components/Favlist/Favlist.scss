@@ -4,6 +4,11 @@
     border-radius: 10px;
     background-color: white;
     overflow: hidden;
+    &:hover{
+        // background-color: rgba(255, 166, 0, 0.295);    
+            box-shadow: 0 10px 30px -10px black;
+
+    }
     img{
         height: 230px;
         width: auto;
