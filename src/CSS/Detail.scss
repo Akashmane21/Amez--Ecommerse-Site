@@ -81,12 +81,6 @@
     }
 }
 
-.imgs{
-    img{
-        height: 500px;
-    }
-}
-
 .shop_btns{
     display: flex;
     button{
@@ -104,6 +98,8 @@
 
         &:hover{
             background-color: white;
+            box-shadow: 0 6px 10px -60px black;
+
         }
     }
 
