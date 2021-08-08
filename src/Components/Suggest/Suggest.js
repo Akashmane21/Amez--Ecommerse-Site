@@ -4,6 +4,7 @@ import {useCounter} from '../../Context/CartContext'
 import {NavLink} from 'react-router-dom'
 
 function Suggest({item}) {
+    // eslint-disable-next-line
     const {setCartdata ,Cartdata , wishlist , setwishlist ,   Desdata, setDesdata} = useCounter()
 
     function Clicked(){

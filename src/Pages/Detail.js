@@ -11,7 +11,7 @@ function Detail() {
     const [Feature, setFeature] = useState([])
     const [Aboutdata, setAboutdata] = useState([])
     const [suggestData, setsuggestData] = useState([])
-    const [status, setstatus] = useState("Add to Cart")
+    const [status, setstatus] = useState("Add to ")
 
     useEffect(() => {
         
