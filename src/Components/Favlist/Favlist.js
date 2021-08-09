@@ -4,32 +4,44 @@ import '../Cartitems/cartitems.scss'
 import './Favlist.scss'
 import {useCounter} from '../../Context/CartContext'
 import {NavLink} from 'react-router-dom'
-
+import firebase from '../../Shopie_DB/Config'
 
 function Favlist({item}) {
     // eslint-disable-next-line
-    const {setCartdata ,Cartdata , wishlist , setwishlist ,   Desdata, setDesdata} = useCounter()
+    const {UserId,setCartdata ,Cartdata , wishlist , setwishlist ,   Desdata, setDesdata} = useCounter()
         // eslint-disable-next-line
 
    
     
         function addtoCart(){
-           
-            Cartdata.push(item)
-            var string = JSON.stringify(Cartdata);
-            localStorage.setItem('cartData',string);
+            var to = `${item.Price}`.replace(/,/g,'')
+            var toa = to.replace("₹",'');
+            var totalprice = parseInt(toa)
+
+
+            const itemdata ={
+                noofitems : 1,
+                Total: totalprice
+              }
+        
+              const all={...itemdata , ...item}
+             
+                const cart_item = firebase.database().ref(`Users/${UserId}/Cart`);
+                cart_item.push(all).then(res => {
+                alert(`Movie  Added in the Movie DB :`);
+      
+    
+          })
           
            
         }
     
 
     function del(){
-        const idToRemove = `${item.id}`
-        const filteredPeople = wishlist.filter((item) => item.id !== idToRemove);
-        console.log(filteredPeople);
-        var string = JSON.stringify(filteredPeople);
-        localStorage.setItem('Wishlist',string);
-        window.location.reload()
+  
+        const itemtodel = firebase.database().ref(`Users/${UserId}/Wishlist`).child(item.ID);
+        itemtodel.remove()
+
 
 
     }

@@ -6,16 +6,22 @@ import { useState , createContext ,useContext  } from "react";
  
 function CartContextProider(props){
 
-            const data =   JSON.parse(localStorage.getItem("cartData"));
-            const [Cartdata, setCartdata] = useState(data)
- 
-
-            const Wishlist =   JSON.parse(localStorage.getItem("Wishlist"));
-            const [wishlist, setwishlist] = useState(Wishlist)
-
+          
             const [Desdata, setDesdata] = useState([])
+
+
+            const Username =  localStorage.getItem("Username");
+            // eslint-disable-next-line
+            const [UserName, setUserName] = useState(Username)
+
+            
+            const userid =  localStorage.getItem("Userid");
+            // eslint-disable-next-line
+            const [UserId, setUserId] = useState(userid)
+
+
  
-    const value={ Cartdata ,setCartdata  , wishlist , setwishlist , Desdata, setDesdata}
+    const value={ UserName , UserId , Desdata, setDesdata}
 
     return(
         <CartContext.Provider value={value}>

@@ -1,29 +1,17 @@
 import '../App.scss';
-import Home from './Home' 
 import Header from '../header/Header';
 import Leftmenu from '../Components/Leftmenu/Leftmenu';
 import {useEffect} from 'react'
-import { useHistory } from "react-router-dom";
 
 
 
-function Homepage() {
-  let history = useHistory();
+function Orders() {
 
 
   useEffect(() => {
 
     
-    if(localStorage.getItem("Userid")==null){
-     
-      history.push('/Auth') 
 
-     }
-
-  else{
-      console.log(localStorage.getItem("cartData"));
-     }
-// eslint-disable-next-line
   }, [])
 
 
@@ -39,7 +27,7 @@ function Homepage() {
         <Leftmenu />
        </div>
        <div className="right_area">
-           <Home />
+        <h1>Your Orders</h1>
        </div>
      </div>
       
@@ -48,4 +36,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default Orders;

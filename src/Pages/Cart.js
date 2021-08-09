@@ -2,25 +2,68 @@ import React , { useState , useEffect} from 'react'
 import '../CSS/Cart.scss'
 import {useCounter} from '../Context/CartContext'
 import Cartitems from '../Components/Cartitems/Cartitems'
+import firebase from '../Shopie_DB/Config'
+
 function Cart() {
     //  eslint-disable-next-line
-    const {setCartdata ,Cartdata} = useCounter()
-        //  eslint-disable-next-line
+    const {UserId} = useCounter()
 
     const [isitems, setisitems] = useState(false)
-useEffect(() => {
-    if(Cartdata){
+    const [CartItem, setCartItem] = useState([])
+    const [ActualTime, setActualTime] = useState("")
 
-    if(Cartdata.length===0){
+useEffect(() => {
+
+    const Products = firebase.database().ref(`Users/${UserId}/Cart`);
+    Products.on('value' , (snapshot)=>{
+      const Products_List = []
+
+
+      const todos =snapshot.val()
+     
+      for(let id in todos){
+        Products_List.push({id, ...todos[id]})
+      }
+      
+      const reversed = Products_List.reverse()
+      setCartItem(reversed)
+
+        var output = [];
+        var All_Total =0
+
+
+        for (var i=0; i < reversed.length ; i++){
+
+            output.push(reversed[i].Total);
+        }
+// eslint-disable-next-line
+        for (var i=0; i < output.length ; i++){
+            All_Total+=output[i]
+        }
+
+        // console.log(output[0]);
+        console.log(All_Total)
+        
+        setActualTime(All_Total)
+    
+
+    
+      
+
+    if(reversed.length===0){
         console.log("No items");
         setisitems(true)
     }
-}
-     // eslint-disable-next-line
-}, [Cartdata]) 
-  // eslint-disable-next-line
+
+      
+    })
+
+
+    // eslint-disable-next-line
+}, []) 
 
     return (
+        <>
         <div className="cart">
         <div className="title">
 
@@ -38,11 +81,22 @@ useEffect(() => {
 
             </div>
         ) : ( " " )}
-<div className="cart_iems">
+            <div className="cart_iems">
 
-        {Cartdata ? Cartdata.map((item , key)=> <Cartitems item={item} key={key} />) : ""}
-</div>
+                    {CartItem ? CartItem.map((item , key)=> <Cartitems item={item} key={key} />) : ""}
+            </div>
         </div>
+
+        <div className="pb">
+
+        </div>
+<div className="Place">
+<h1>Total Amount : </h1>
+            <h2>₹{ActualTime}</h2>
+            <button>Place Order__
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="yellow" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8l4 4-4 4M8 12h7"/></svg></button>
+</div>
+</>
     )
 }
 

@@ -355,15 +355,16 @@ left: 30px;
 }
 
 .login_div >button{
-  background-color: orange;
+  background-color: rgba(255, 0, 0, 0.781);
   padding: 4px 15px;
-  border-radius: 3px;
+  border-radius: 20px;
   outline-width: 0px;
   margin-top: 7px;
   margin-left: 20px;
   border: 0px;
   font-size: 20px;
-  // color: white;
+  color: white;
+  margin-top: 10px;
 }
 
 .login_div >button:hover{

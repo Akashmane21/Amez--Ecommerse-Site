@@ -3,13 +3,17 @@ import Header from '../header/Header'
 import {useCounter} from '../Context/CartContext'
 import '../CSS/Detail.scss'
 import Data from "../Shopie_DB/Data";
-import Suggest from '../Components/Suggest/Suggest';
+// import Suggest from '../Components/Suggest/Suggest';
 import {NavLink} from 'react-router-dom'
+import firebase from '../Shopie_DB/Config'
+
 
 function Detail() {
-    const {Desdata ,Cartdata} = useCounter()
+    const {Desdata  , UserId} = useCounter()
+
     const [Feature, setFeature] = useState([])
     const [Aboutdata, setAboutdata] = useState([])
+    // eslint-disable-next-line
     const [suggestData, setsuggestData] = useState([])
     const [status, setstatus] = useState("Add to ")
 
@@ -39,19 +43,31 @@ function Detail() {
     for(let id in suggest){
       suggest_data.push({id, ...suggest[id]})
     }
+
     const reversed = suggest_data.reverse()
     console.table(reversed)
     setsuggestData(reversed)
-
 // eslint-disable-next-line
     }, [])
 
     function addtoCart(){
-           
-        Cartdata.push(Desdata)
-        var string = JSON.stringify(Cartdata);
-        localStorage.setItem('cartData',string);
-        setstatus("Added")
+        var to = `${Desdata.Price}`.replace(/,/g,'')
+            var toa = to.replace("₹",'');
+            var totalprice = parseInt(toa)
+
+        const itemdata ={
+            noofitems : 1,
+            Total: totalprice
+          }
+    
+          const all={...itemdata , ...Desdata}
+         
+        
+        const cart_item = firebase.database().ref(`Users/${UserId}/Cart`);
+        cart_item.push(all).then(res => {
+          setstatus("Added")    
+          })
+
       
        
     }
@@ -66,14 +82,7 @@ function Detail() {
 
             <div className="Detail_box">
                 <div className="images">
-                {/* <img src={Desdata.Image1} alt=" " />
-
-                <img src={Desdata.Image1} alt=" " />
-                <img src={Desdata.Image2} alt=" " />
-                <img src={Desdata.Image3} alt=" " /> */}
-
-
-
+             
 
 
                 <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
@@ -130,8 +139,8 @@ function Detail() {
 
 
                 <div className="info_price">
-                    <h2>₹{Desdata.Price}</h2>
-                    <h3>₹{Desdata.MRP}</h3>
+                    <h2>{Desdata.Price}</h2>
+                    <h3>{Desdata.MRP}</h3>
                     <h5>({Desdata.Discount} OFF)</h5>
                 </div>
 
@@ -158,7 +167,7 @@ function Detail() {
           <NavLink exact activeClassName = "active_class" to="/Checkout" >
 
               <button className="buy_btn">Buy Now <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/></svg></button>
-</NavLink>
+        </NavLink>
               <button className="cart_btn" onClick={addtoCart}> {status}<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg></button>
 
           </div>
@@ -169,14 +178,14 @@ function Detail() {
 
 
 
-        <div className="Suggest_row">
+        {/* <div className="Suggest_row">
             
             {suggestData?suggestData.map((item , index) => 
             <>
           <Suggest item={item} key={index} />
             </>
                                 ) : (" ")}
-        </div>
+        </div> */}
 
         </div>
     )

@@ -1,54 +1,59 @@
-import React  , {useState} from 'react'
+import React   from 'react'
 import '../Deals/Deals.scss'
 import './cartitems.scss'
 import {useCounter} from '../../Context/CartContext'
 import {NavLink} from 'react-router-dom'
-
+import firebase from '../../Shopie_DB/Config'
 
 function Cartitems({item}) {
+
     // eslint-disable-next-line
-    const {setCartdata ,Cartdata , wishlist , setwishlist ,   Desdata, setDesdata} = useCounter()
+    const {  UserId, setDesdata} = useCounter()
         // eslint-disable-next-line
 
-    const [num, setnum] = useState(1)
-    const [bigp, setbigp] = useState(2)
-    var ap = parseInt(`${item.Price}`.replace(/,/g, ''));
+
+    var pr = `${item.Price}`.replace(/,/g,'')
+    var pri = pr.replace("₹",'');
+    var actualprice = parseInt(pri)
+
+    var to = `${item.Total}`.replace(/,/g,'')
+    var toa = to.replace("₹",'');
+    var totalprice = parseInt(toa)
 
 
 
-const [Total, setTotal] = useState(ap)
-//  eslint-disable-next-line
-const [actualP, setactualP] = useState(ap)
 
     function Dec(){
-        setnum(num-1)
-        setbigp(bigp-1)
-        setTotal(Total-actualP);
+       
+        const alll = item.noofitems - 1
+
+        const totalp = totalprice  - actualprice 
+        const itemPrice = firebase.database().ref(`Users/${UserId}/Cart`).child(item.id);
+        itemPrice.update({
+            noofitems:alll,
+            Total:totalp
+        })
 
 
 
     }
     function Inc(){
-        setnum(num+1)
-        setbigp(bigp+1)
-       
-        setTotal(actualP*bigp);
+    
+        const alll = item.noofitems + 1
 
-       
+        const totalp = actualprice + totalprice
 
+        const itemPrice = firebase.database().ref(`Users/${UserId}/Cart`).child(item.id);
+        itemPrice.update({
+            noofitems:alll,
+            Total : totalp
+        })
 
     }
 
     function del(){
-        const idToRemove = `${item.id}`
-        const filteredPeople = Cartdata.filter((item) => item.id !== idToRemove);
-        console.log(filteredPeople);
-        var string = JSON.stringify(filteredPeople);
-        localStorage.setItem('cartData',string);
-        window.location.reload()
-        // localStorage.setItem('cartData',filteredPeople);
-
-
+        const itemtodel = firebase.database().ref(`Users/${UserId}/Cart`).child(item.id);
+        itemtodel.remove()
     }
 
     
@@ -69,15 +74,15 @@ const [actualP, setactualP] = useState(ap)
            <NavLink exact activeClassName = "active_class" to="/Detail" onClick={Save}>
 
            <h2>{item.Name}</h2>
-</NavLink>
+            </NavLink>
 
            <div className="rate">
                 <div className="Price">
-              <span>Price :</span>   ₹{item.Price}
+              <span>Price :</span>   {item.Price}
               </div>
            
            <div className="MRP">
-                 <span>M.R.P :</span> <span className="mrp"> ₹{item.MRP}</span>  ({item.Discount})
+                 <span>M.R.P :</span> <span className="mrp"> {item.MRP}</span>  ({item.Discount})
             </div>
            </div>
            
@@ -99,7 +104,7 @@ const [actualP, setactualP] = useState(ap)
             <div className="incbtn">
                 <button onClick={Dec}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                 </button>
-                <h3>{num}</h3>
+                <h3>{item.noofitems}</h3>
                 <button onClick={Inc}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                 </button>
@@ -107,8 +112,8 @@ const [actualP, setactualP] = useState(ap)
             </div>
 
 
-            <div className="Price total ">
-               <span>Total :</span>   ₹{Total}
+            <div className="Price total">
+               <span>Total :</span> ₹{item.Total}
            </div>
 
 

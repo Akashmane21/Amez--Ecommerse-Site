@@ -3,21 +3,45 @@ import "./Header.scss";
 import {NavLink} from 'react-router-dom'
 import Headroom from "react-headroom";
 import {useCounter} from '../Context/CartContext'
-
+import firebase from '../Shopie_DB/Config'
+import { useHistory } from "react-router-dom";
 
 function Header() {
+  let history = useHistory();
+
   // eslint-disable-next-line
-  const {setCartdata ,Cartdata} = useCounter()
+  const {UserName , UserId} = useCounter()
 // eslint-disable-next-line
-const [length, setlength] = useState(0)
+const [length, setlength] = useState(" ")
 
 useEffect(() => {
-  if(Cartdata){
 
-    setlength(Cartdata.length)
-  }
-         // eslint-disable-next-line
-}, [Cartdata])
+  const Products = firebase.database().ref(`Users/${UserId}/Cart`);
+  Products.on('value' , (snapshot)=>{
+    const Products_List = []
+
+    const todos =snapshot.val()
+   
+    for(let id in todos){
+      Products_List.push({id, ...todos[id]})
+    }
+    
+    const reversed = Products_List.reverse()
+    setlength(reversed.length)
+    
+  })
+
+
+
+// eslint-disable-next-line
+}, [])
+
+function logout(){
+  localStorage.removeItem("Username");
+  localStorage.removeItem("Userid");
+  history.push('/Auth') 
+
+}
 
 
 
@@ -104,19 +128,33 @@ useEffect(() => {
 
                 <ul className= "menu">
        
-        
+                <li>
+              <a href="#Notifications" className="menu_icon">
+              <div className="header_btn">
+
+              {/* <span className="cartlen">1</span> */}
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <h5>_{UserName}</h5>
+              </div>
+              </a>
+              
+            </li>
+          
             <li>
             <NavLink exact activeClassName = "active_class" to="/Wishlist">
 
               <div className="header_btn">
 
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 24 24" fill="red" stroke="red" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="17" viewBox="0 0 24 24" fill="red" stroke="red" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
               <h5>Wishlist</h5>
               </div>
               </NavLink>
             </li>
             <li>
-              <a href="#Notifications" className="menu_icon">
+            <NavLink exact activeClassName = "active_class" to="/Orders">
+
+              {/* <a href="#Notifications" className="menu_icon"> */}
               <div className="header_btn">
 
               {/* <span className="cartlen">1</span> */}
@@ -124,8 +162,8 @@ useEffect(() => {
          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11.5" cy="8.5" r="5.5"/><path d="M11.5 14v7"/></svg>
               <h5>Orders</h5>
               </div>
-              </a>
-              
+              {/* </a> */}
+              </NavLink>
             </li>
             <li >
             <NavLink exact activeClassName = "active_class" to="/Cart">
@@ -139,7 +177,7 @@ useEffect(() => {
               
             </li>
             <li className="login_div">
-              <button className="Login">Login</button>
+              <button className="Login" onClick={logout}>logout</button>
             </li>
            
         </ul>

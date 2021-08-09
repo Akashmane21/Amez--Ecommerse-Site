@@ -1,12 +1,12 @@
 import React , { useState } from 'react'
 import './Deals.scss'
 import {NavLink} from 'react-router-dom'
-
+import firebase from '../../Shopie_DB/Config'
 import {useCounter} from '../../Context/CartContext'
 
 function Deals({Product}) {
     // eslint-disable-next-line
-    const {setCartdata ,Cartdata , wishlist , setwishlist ,   Desdata, setDesdata} = useCounter()
+    const {UserId, setCartdata ,Cartdata , wishlist , setwishlist ,   Desdata, setDesdata} = useCounter()
     const [BG, setBG] = useState(false)
 
     const [status, setstatus] = useState(false)
@@ -15,21 +15,45 @@ function Deals({Product}) {
 
 
     function Add(){
-       
-        Cartdata.push(Product)
-        var string = JSON.stringify(Cartdata);
-        localStorage.setItem('cartData',string);
-        setstatus(true)
+
+
+      
+      var to = `${Product.Price}`.replace(/,/g,'')
+      var toa = to.replace("₹",'');
+      var totalprice = parseInt(toa)
+
+
+      const itemdata ={
+        noofitems : 1,
+        Total:totalprice
+      }
+
+      const all={...itemdata , ...Product}
+     
+
+        const cart_item = firebase.database().ref(`Users/${UserId}/Cart`);
+        cart_item.push(all).then(res => {
+          alert(`Movie  Added in the Movie DB :`);
+          setstatus(true)
+          // history.push('/Placed') 
+    
+          })
+         
        
     }
 
     function Fav(){
+
+                    
+      const fav_item = firebase.database().ref(`Users/${UserId}/Wishlist`);
+      fav_item.push(Product).then(res => {
+      alert(`Movie  Added in the Movie DB :`);
       setBG(true)
-      wishlist.push(Product)
-      var favdata = JSON.stringify(wishlist);
-      localStorage.setItem('Wishlist',favdata);
+
      
-    }
+    })
+  
+  }
     
 
 

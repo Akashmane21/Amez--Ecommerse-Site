@@ -3,11 +3,18 @@ import Header from '../header/Header';
 import {useEffect} from 'react'
 import {NavLink} from 'react-router-dom'
 import {useCounter} from '../Context/CartContext'
-
+import  {useState } from 'react'
+import firebase from '../Shopie_DB/Config'
+import { useHistory } from "react-router-dom";
 
 
 function Checkout() {
-  const {Desdata } = useCounter()
+  let history = useHistory();
+
+  const {Desdata ,  UserId } = useCounter()
+  const [name, setname] = useState(" ")
+  const [Phone, setPhone] = useState(" ")
+  const [Address, setAddress] = useState(" ")
 
 
   useEffect(() => {
@@ -16,6 +23,33 @@ function Checkout() {
     
 
   }, [])
+
+  function Submit(){
+
+    var date_time = new  Date().toLocaleString();
+    const Order={
+      Name : name,
+      Phoneno : Phone,
+      Address : Address ,
+      Prroduct_Name : Desdata.Name,
+      Product_price : Desdata.Price , 
+      Date_time : date_time,    
+      product_img :Desdata.Image1,
+      Product_info : Desdata
+
+
+    }
+    const Ordered_Product = firebase.database().ref(`Users/${UserId}/Orders`);
+    Ordered_Product.push(Order).then(res => {
+      console.log("address key = " + res.key) ;
+      alert(`Movie  Added in the Movie DB :`);
+      history.push('/Placed') 
+
+      })
+     
+
+    console.log(Order);
+  }
 
 
   return (
@@ -46,13 +80,13 @@ function Checkout() {
             <div className="data">
             <div>
             <h2>Name :</h2>
-              <input placeholder="Ener your Name here" required />
+              <input placeholder="Ener your Name here" required onChange={event => setname(event.target.value)} />
 
             </div>
 
             <div>
             <h2>Phone Number :</h2>
-              <input placeholder="Enter Phonr Number" required/>
+              <input placeholder="Enter Phonr Number" required onChange={event => setPhone(event.target.value)} />
 
             </div>
 
@@ -60,14 +94,14 @@ function Checkout() {
             
            
             <h2>Address :</h2>
-            <textarea rows={3} placeholder="Enter your Address here with pin-code" />
+            <textarea rows={3} placeholder="Enter your Address here with pin-code" onChange={event => setAddress(event.target.value)} />
             <br />
 
             <div className="product">
 
             <div>
                <h4>{Desdata.Name}</h4>
-              <h4 className="price">₹{Desdata.Price}</h4>
+              <h4 className="price">{Desdata.Price}</h4>
             </div>
 
             <img src={Desdata.Image1} alt="" />
@@ -85,7 +119,7 @@ function Checkout() {
             <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="orangered" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
             </NavLink>
-            <button className="place">Place Order
+            <button className="place" onClick={Submit}>Place Order
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9l6 6-6 6"/><path d="M4 4v7a4 4 0 0 0 4 4h11"/></svg>
             </button>
             </div>
