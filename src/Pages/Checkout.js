@@ -11,16 +11,25 @@ import { useHistory } from "react-router-dom";
 function Checkout() {
   let history = useHistory();
 
-  const {Desdata ,  UserId } = useCounter()
+  const { UserId } = useCounter()
   const [name, setname] = useState(" ")
   const [Phone, setPhone] = useState(" ")
   const [Address, setAddress] = useState(" ")
+  const [AllTotal, setAllTotal] = useState(" ")
+  const [Allitems, setAllitems] = useState([])
+
 
 
   useEffect(() => {
     document.documentElement.scrollTop = 0; 
-
     
+  var Allt =JSON.parse(localStorage.getItem("Cart"));
+  var totalP =localStorage.getItem("Total");
+  console.log(Allt);
+  console.log(totalP);
+  setAllitems(Allt)
+  setAllTotal(totalP)
+
 
   }, [])
 
@@ -31,18 +40,17 @@ function Checkout() {
       Name : name,
       Phoneno : Phone,
       Address : Address ,
-      Prroduct_Name : Desdata.Name,
-      Product_price : Desdata.Price , 
+      Total : AllTotal , 
       Date_time : date_time,    
-      product_img :Desdata.Image1,
-      Product_info : Desdata
+     Status : "Ordered",
+      Product_info : Allitems
 
 
     }
     const Ordered_Product = firebase.database().ref(`Users/${UserId}/Orders`);
     Ordered_Product.push(Order).then(res => {
       console.log("address key = " + res.key) ;
-      alert(`Movie  Added in the Movie DB :`);
+      // alert(`Movie  Added in the Movie DB :`);
       history.push('/Placed') 
 
       })
@@ -54,11 +62,28 @@ function Checkout() {
 
   return (
     <div className="App">
+
     <div className="Menu">
 
      <Header />
     </div>
+     <div className="product">
 
+      {Allitems ? Allitems.map((item , index)=> 
+        <div className="Allinfo">
+            <img src={item.Image} alt="" />
+            
+                    <div className="item_info">
+
+                                  <h4>{item.Name}</h4>
+                                  <h2>Item's : {item.Items}</h2>
+                                  <h3> {item.Total}</h3>
+                    </div>
+        </div>
+
+
+) : ( "")}
+</div>
      <div className="Packblock">
        <div className="Packleft_area">
 
@@ -97,19 +122,13 @@ function Checkout() {
             <textarea rows={3} placeholder="Enter your Address here with pin-code" onChange={event => setAddress(event.target.value)} />
             <br />
 
-            <div className="product">
-
-            <div>
-               <h4>{Desdata.Name}</h4>
-              <h4 className="price">{Desdata.Price}</h4>
-            </div>
-
-            <img src={Desdata.Image1} alt="" />
-             
-
-            </div>
+           
 
 
+           
+
+<h3>You have to Pay : {AllTotal}</h3>
+<br />
 
 
 
@@ -124,8 +143,9 @@ function Checkout() {
             </button>
             </div>
      </div>
-      
-      
+     
+ 
+
     </div>
   );
 }

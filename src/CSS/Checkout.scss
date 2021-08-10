@@ -3,6 +3,11 @@
         .Packright_area{
             padding: 20px;
 
+            h3{
+                border-bottom: 2px solid rgb(0, 255, 34);
+                padding-bottom: 10px;
+            }
+
         // background-color: orangered;
         h1{
             font-size: 30px;
@@ -76,7 +81,8 @@
 }
 
 .product{
-    display: flex;
+    
+    
     margin-top: 20px;
     img{
         height: 100px;
@@ -97,6 +103,34 @@
     color: rgb(233, 27, 27);
 }
 
+
+.Allinfo{
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+
+    img{
+        padding-right: 20px;
+    }
+
+    .item_info{
+        h2{
+            font-size: 20px;
+
+        }
+
+        h3{
+            // color: orangered;
+            color: blue;
+
+            // font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+        }
+    }
+}
+
 @media (min-width: 650px) {
     .Packblock{
         display: flex;
@@ -105,6 +139,9 @@
     .data{
         display: flex;
     }
+    .product{
+        display: flex;
+    }    
     
 
 }

@@ -13,6 +13,10 @@
     background-color: white;
     padding: 10px;
     border-radius: 10px;
+
+    &:hover{
+        box-shadow:0px 10px 30px -10px rgb(85, 83, 83);
+    }
     img{
         height: 200px;
     }
