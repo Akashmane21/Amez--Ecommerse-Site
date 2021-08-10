@@ -10,7 +10,7 @@ function Header() {
   let history = useHistory();
 
   // eslint-disable-next-line
-  const {UserName , UserId} = useCounter()
+  const {UserId} = useCounter()
 // eslint-disable-next-line
 const [length, setlength] = useState(" ")
 
@@ -37,7 +37,6 @@ useEffect(() => {
 }, [])
 
 function logout(){
-  localStorage.removeItem("Username");
   localStorage.removeItem("Userid");
   history.push('/Auth') 
 
@@ -135,7 +134,7 @@ function logout(){
               {/* <span className="cartlen">1</span> */}
 
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                            <h5>_{UserName}</h5>
+                            <h5>_{UserId}</h5>
               </div>
               </a>
               

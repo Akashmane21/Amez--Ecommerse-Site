@@ -14,7 +14,7 @@ function Auth() {
           
            
 
-            let r = (Math.random() + 1).toString(36).substring(7);
+            let r = (Math.random() + 1).toString(36).substring(11);
             const name = username+"_"+r
             console.log(name);
 
@@ -24,7 +24,7 @@ function Auth() {
             Name :username,
             Password:password
              }).then(res => {
-                localStorage.setItem('Username',username);
+               
                 localStorage.setItem('Userid',name);
 
                 history.push('/')

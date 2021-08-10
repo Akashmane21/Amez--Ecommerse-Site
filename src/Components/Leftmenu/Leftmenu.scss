@@ -29,6 +29,11 @@
     padding: 4px;
     border-radius: 10px;
     width: 190px;
+    padding-bottom: 10px;
+
+    &:hover{
+        color: red;
+    }
 
     h1{
         padding-left: 10px;
