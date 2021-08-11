@@ -3,7 +3,7 @@ import './Collection.scss'
 function Collection() {
     return (
         <div className="Coll">
-            <h2>Popular Categories ✨</h2>
+            {/* <h2>Popular Categories ✨</h2> */}
             <div className="Coll_body">
                 <div className="Coll_block">
                     <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="img" />
