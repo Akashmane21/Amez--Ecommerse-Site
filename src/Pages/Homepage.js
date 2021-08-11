@@ -14,7 +14,7 @@ function Homepage() {
   useEffect(() => {
 
     
-    if(localStorage.getItem("Userid")==null){
+    if(localStorage.getItem("Auth")==null){
      
       history.push('/Auth') 
 

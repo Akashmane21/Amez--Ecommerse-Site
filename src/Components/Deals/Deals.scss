@@ -51,10 +51,10 @@ span{
     align-items: center;
 
     button{
-        border: 0px;
+        border: 1px solid rgba(190, 178, 178, 0.89);
         border-radius: 10px;
         align-items: center;
-        background-color: rgba(216, 215, 215, 0.329);
+        background-color: rgb(255, 255, 255);
         padding:4px 9px;
         margin-top: 20px;
         outline: none;
@@ -62,7 +62,7 @@ span{
         margin: 5px;
 
         &:hover{
-            background-color: rgba(255, 166, 0, 0.295);    
+            background-color: rgba(255, 0, 0, 0.432);    
                 box-shadow: 0 10px 10px -10px black;
 
         }

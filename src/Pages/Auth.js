@@ -24,7 +24,7 @@ function Auth() {
             Name :username,
             Password:password
              }).then(res => {
-               
+                localStorage.setItem("Auth" , "True")
                 localStorage.setItem('Userid',name);
                 localStorage.setItem('UserName',username);
 

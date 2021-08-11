@@ -72,11 +72,11 @@ function Deals({Product}) {
            <h2>{Product.Name}</h2>
            </NavLink>
            <div className="Price">
-        <span>Price :</span>   ₹{Product.Price}
+        <span>Price :</span>   {Product.Price}
            </div>
 
            <div className="MRP">
-        <span>M.R.P :</span> <span className="mrp"> ₹{Product.MRP}</span> 
+        <span>M.R.P :</span> <span className="mrp"> {Product.MRP}</span> 
         <br />
         ({Product.Discount}) *off
             </div>
