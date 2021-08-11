@@ -14,8 +14,8 @@ function Auth() {
           
            
 
-            let r = (Math.random() + 1).toString(36).substring(11);
-            const name = username+"_"+r
+            // let r = (Math.random() + 1).toString(36).substring(11);
+            const name = username+password
             console.log(name);
 
             // const user = firebase.database().ref(`Users/${name}`);
@@ -26,6 +26,7 @@ function Auth() {
              }).then(res => {
                
                 localStorage.setItem('Userid',name);
+                localStorage.setItem('UserName',username);
 
                 history.push('/')
                 console.log("Account Created");

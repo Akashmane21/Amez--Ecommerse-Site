@@ -5,6 +5,7 @@
 
             h3{
                 border-bottom: 2px solid rgb(0, 255, 34);
+                margin-top: 60px;
                 padding-bottom: 10px;
             }
 
@@ -106,9 +107,9 @@
 
 .Allinfo{
     display: flex;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.911);
     justify-content: space-around;
-    margin: 10px;
+    // margin: 10px;
     padding: 10px;
 
     img{
@@ -117,11 +118,11 @@
 
     .item_info{
         h2{
-            font-size: 20px;
+            font-size: 15px;
 
         }
 
-        h3{
+        h6{
             // color: orangered;
             color: blue;
 
@@ -131,9 +132,17 @@
     }
 }
 
+.product{
+    display: flex;
+    width: 95%;
+    overflow-x: scroll;
+}    
+
+
 @media (min-width: 650px) {
     .Packblock{
         display: flex;
+       
         
     }
     .data{
@@ -141,7 +150,8 @@
     }
     .product{
         display: flex;
-    }    
-    
+        width: 600px;
+        overflow-x: scroll;
+    } 
 
 }

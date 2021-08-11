@@ -67,24 +67,9 @@ function Checkout() {
 
      <Header />
     </div>
-     <div className="product">
-
-      {Allitems ? Allitems.map((item , index)=> 
-        <div className="Allinfo">
-            <img src={item.Image} alt="" />
-            
-                    <div className="item_info">
-
-                                  <h4>{item.Name}</h4>
-                                  <h2>Item's : {item.Items}</h2>
-                                  <h3> {item.Total}</h3>
-                    </div>
-        </div>
-
-
-) : ( "")}
-</div>
+  
      <div className="Packblock">
+  
        <div className="Packleft_area">
 
               <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_99VKMQ.json"  background="transparent"  speed="1"   loop  autoplay></lottie-player>
@@ -123,7 +108,23 @@ function Checkout() {
             <br />
 
            
+            <div className="product">
 
+{Allitems ? Allitems.map((item , index)=> 
+  <div className="Allinfo">
+      <img src={item.Image} alt="" />
+      
+              <div className="item_info">
+
+                            <h4>{item.Name}</h4>
+                            <h2>Item's : {item.Items}</h2>
+                            <h6> {item.Total}</h6>
+              </div>
+  </div>
+
+
+) : ( "")}
+</div>
 
            
 
