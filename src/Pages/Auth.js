@@ -1,72 +1,142 @@
 import React ,{useState } from 'react'
 // import {NavLink} from 'react-router-dom'
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import firebase from '../Shopie_DB/Config'
 import '../CSS/Auth.scss'
 
 
 function Auth() {
-    // let history = useHistory();
+    let history = useHistory();
 
     const [username, setusername] = useState('')
     const [password, setpassword] = useState('')
+    const [Phone, setPhone] = useState(' ')
     const [isLogin, setisLogin] = useState(false)
 
-        function Submit(){
-            console.log(username);
+        // function Submit(){
+        //     console.log(username);
           
            
 
-            // let r = (Math.random() + 1).toString(36).substring(11);
-            const name = username+password
-            console.log(name);
+        //     // let r = (Math.random() + 1).toString(36).substring(11);
+        //     const name = username+password
+        //     console.log(name);
 
-            // const user = firebase.database().ref(`Users/${name}`);
+        //     // const user = firebase.database().ref(`Users/${name}`);
 
-            // firebase.database().ref.child("Users").equalTo(name).once("value",snapshot => {
-            //     if (snapshot.exists()){
-            //       const userData = snapshot.val();
-            //       console.log("exists!", userData);
-            //     }
-            // });
-            firebase.database().ref(`Users/${name}/`).once("value", snapshot => {
-                if (snapshot.exists()){
+        //     // firebase.database().ref.child("Users").equalTo(name).once("value",snapshot => {
+        //     //     if (snapshot.exists()){
+        //     //       const userData = snapshot.val();
+        //     //       console.log("exists!", userData);
+        //     //     }
+        //     // });
+        //     firebase.database().ref(`Users/${name}/`).once("value", snapshot => {
+        //         if (snapshot.exists()){
                   
-                   const email = snapshot.val();
-                   console.log("exists!" , email);
-                }
-             });
+        //            const email = snapshot.val();
+        //            console.log("exists!" , email);
+        //         }
+        //      });
 
-            // firebase.database().ref(`Users/${name}/Auth`)
-            // .set({
-            // Name :username,
-            // Password:password
-            //  }).then(res => {
-            //     localStorage.setItem("Auth" , "True")
-            //     localStorage.setItem('Userid',name);
-            //     localStorage.setItem('UserName',username);
+        //     // firebase.database().ref(`Users/${name}/Auth`)
+        //     // .set({
+        //     // Name :username,
+        //     // Password:password
+        //     //  }).then(res => {
+        //     //     localStorage.setItem("Auth" , "True")
+        //     //     localStorage.setItem('Userid',name);
+        //     //     localStorage.setItem('UserName',username);
 
-            //     // history.push('/')
-            //     console.log("Account Created");
-            //     window.location.reload(false);
+        //     //     // history.push('/')
+        //     //     console.log("Account Created");
+        //     //     window.location.reload(false);
 
-            //      })
+        //     //      })
 
 
 
    
       
 
-        }
+        // }
 
 
         function Login(){
-            console.log("Clicked");
             setisLogin(true)
         }
         function Register(){
-            console.log("Clicked");
             setisLogin(false)
+        }
+
+
+
+
+        function Signup(){
+            const name = username+password
+
+            firebase.database().ref(`Users/${name}/`).once("value", snapshot => {
+                if (snapshot.exists()){
+                  
+                   const email = snapshot.val();
+                   console.log("exists!" , email);
+                }
+                else{
+                    console.log("The User is Not exists");
+                         firebase.database().ref(`Users/${name}/Auth`)
+                            .set({
+                            Name :username,
+                            Password:password,
+                            Phone:Phone
+                            }).then(res => {
+                                localStorage.setItem("authentication" , "True")
+                                localStorage.setItem('Userid',name);
+                                localStorage.setItem('UserName',username);
+
+                                history.push('/')
+                                console.log("Account Created");
+                                window.location.reload(false);
+
+                                })
+
+
+                }
+             });
+
+        }
+
+        function Signin(){
+
+            const name = username+password
+            console.log(name);
+
+            firebase.database().ref(`Users/${name}/`).once("value", snapshot => {
+                if (snapshot.exists()){
+                  
+                   const email = snapshot.val();
+                   console.log("exists!" , email);
+                   firebase.database().ref(`Users/${name}/Auth`)
+                   .set({
+                   Name :username,
+                   Password:password,
+                   Phone:Phone
+                   }).then(res => {
+                       localStorage.setItem("authentication" , "True")
+                       localStorage.setItem('Userid',name);
+                       localStorage.setItem('UserName',username);
+
+                       history.push('/')
+                       console.log("Account Created");
+                       window.location.reload(false);
+
+                       })
+
+                }
+                else{
+                    console.log("The User is Not exists");
+                    
+                }
+             });
+            
         }
 
     return (
@@ -102,7 +172,7 @@ function Auth() {
                               <>
                             <h2>Phone Number :</h2>
                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        <input placeholder="Enter Phone Number :" onChange={name => setusername(name.target.value)} required />
+                        <input placeholder="Enter Phone Number :" onChange={number => setPhone(number.target.value)} required />
                        </>
                           ) }
                       
@@ -113,11 +183,11 @@ function Auth() {
                             <hr />
 
                             {isLogin ? ( 
-                                <button onClick={Login} type="submit" className="register">Login</button>
+                                <button onClick={Signin} type="submit" className="register">Login</button>
 
                             ) : ( 
 
-                        <button onClick={Submit} type="submit" className="register">Register</button>
+                        <button onClick={Signup} type="submit" className="register">Register</button>
                              )}
 
                         <hr />

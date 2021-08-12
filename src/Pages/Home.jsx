@@ -22,8 +22,8 @@ export default function Fav() {
       const todos =snapshot.val()
       console.log(todos);
       for(let id in todos){
-        const  ID = id
-        Products_List.push({ID ,  ...todos[id]})
+        // const  ID = id
+        Products_List.push({  ...todos[id]})
       }
       const reversed = Products_List.reverse()
       console.table(reversed)
