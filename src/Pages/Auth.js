@@ -10,6 +10,7 @@ function Auth() {
 
     const [username, setusername] = useState('')
     const [password, setpassword] = useState('')
+    const [isLogin, setisLogin] = useState(false)
 
         function Submit(){
             console.log(username);
@@ -61,6 +62,11 @@ function Auth() {
 
         function Login(){
             console.log("Clicked");
+            setisLogin(true)
+        }
+        function Register(){
+            console.log("Clicked");
+            setisLogin(false)
         }
 
     return (
@@ -78,20 +84,51 @@ function Auth() {
                 <div className="form">
 
                     <h3 onClick={Login}>Welcome to Shoppie
-                    {/* <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/></svg> */}
                     </h3>
+                    {isLogin ? ( 
+                        <center> <h2>-- Sign in --</h2></center>
+                    ) : ( 
+                        <center> <h2>-- Sign up --</h2></center>
+                    )}
+                   
                         <h2>Name : </h2>
-                        <input placeholder="Enter Name" onChange={name => setusername(name.target.value)} />
-                        <h2>Phone Number :</h2>
-                        <input placeholder="Enter Phone Number :" onChange={name => setusername(name.target.value)} />
-                       
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                         <input placeholder="Enter Name" onChange={name => setusername(name.target.value)} required/>
+                        
+                         {isLogin ? (
+
+                  ""
+                          ) : ( 
+                              <>
+                            <h2>Phone Number :</h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <input placeholder="Enter Phone Number :" onChange={name => setusername(name.target.value)} required />
+                       </>
+                          ) }
+                      
                        <h2>Password : </h2> 
-                        <input placeholder="Enter Password" onChange={pass => setpassword(pass.target.value)} />
+                       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        <input placeholder="Enter Password" onChange={pass => setpassword(pass.target.value)} required />
                             <br />
                             <hr />
-                        <button onClick={Submit} className="register">Register</button>
+
+                            {isLogin ? ( 
+                                <button onClick={Login} type="submit" className="register">Login</button>
+
+                            ) : ( 
+
+                        <button onClick={Submit} type="submit" className="register">Register</button>
+                             )}
+
                         <hr />
+
+                        {isLogin ? ( 
+                            <h6>Don't Have a Account ? <span onClick={Register}>Register</span></h6>
+
+                         ) : ( 
+
                        <h6>Already Have a Account ? <span onClick={Login}>Login</span></h6>
+                        ) }
                         {/* <button onClick={Submit} className="login">Login</button> */}
 
                 </div>
