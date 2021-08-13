@@ -69,8 +69,12 @@ function Deals({Product}) {
         <NavLink exact activeClassName = "active_class" to="/Detail" onClick={Save}>
 
            <img src={Product.Image1} alt="" />
-           <h2>{Product.Name}</h2>
+         
+
+          
            </NavLink>
+           <div className="pp">
+           <h2>{Product.Name}</h2>
            <div className="Price">
         <span>Price :</span>   {Product.Price}
            </div>
@@ -111,7 +115,7 @@ function Deals({Product}) {
 
                 </div>
 
-
+                </div>
 
 
         </div>

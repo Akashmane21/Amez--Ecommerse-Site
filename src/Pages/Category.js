@@ -5,10 +5,10 @@ import {useEffect} from 'react'
 // import Cart from './Cart';
 import { useState  } from "react";
 import firebase from '../Shopie_DB/Config.js'
-import Deals from "../Components/Deals/Deals";
+// import Deals from "../Components/Deals/Deals";
 import './../CSS/product_card.scss'
 import '../CSS/Category.scss'
-
+import CategoryItem from '../Components/CategoryItem/CategoryItem';
 
 function Category() {
   const [Productsdata, setProductsdata] = useState([])
@@ -103,7 +103,7 @@ function Category() {
         <div className="pro">
 
         <div className="products">
-          {Productsdata ? Productsdata.map((Product , index)=> <Deals Product={Product} key={index}/>) : ""}
+          {Productsdata ? Productsdata.map((Product , index)=> <CategoryItem Product={Product} key={index}/>) : ""}
         </div>
         </div>
 
