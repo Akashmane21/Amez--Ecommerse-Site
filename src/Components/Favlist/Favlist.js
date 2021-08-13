@@ -28,7 +28,7 @@ function Favlist({item}) {
              
                 const cart_item = firebase.database().ref(`Users/${UserId}/Cart`);
                 cart_item.push(all).then(res => {
-                alert(`Movie  Added in the Movie DB :`);
+                alert(`Product is Added to your Cart`);
       
     
           })

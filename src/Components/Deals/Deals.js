@@ -33,7 +33,7 @@ function Deals({Product}) {
 
         const cart_item = firebase.database().ref(`Users/${UserId}/Cart`);
         cart_item.push(all).then(res => {
-          alert(`Movie  Added in the Movie DB :`);
+          alert(`Product is Added to your Cart`);
           setstatus(true)
           // history.push('/Placed') 
     
@@ -47,7 +47,7 @@ function Deals({Product}) {
                     
       const fav_item = firebase.database().ref(`Users/${UserId}/Wishlist`);
       fav_item.push(Product).then(res => {
-      alert(`Movie  Added in the Movie DB :`);
+      alert(`Product is Added to your Wishlist `);
       setBG(true)
 
      

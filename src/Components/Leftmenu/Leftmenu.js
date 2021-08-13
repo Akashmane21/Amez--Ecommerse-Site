@@ -1,5 +1,6 @@
 import React from 'react'
 import './Leftmenu.scss'
+import {NavLink} from 'react-router-dom'
 
 
 function Leftmenu() {
@@ -11,30 +12,32 @@ function Leftmenu() {
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
         <h1>Categories</h1>
         </div>
+        <NavLink exact activeClassName = "active_class" to="/Category" >
 
         <div className="list">
             <ul>
                                    {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">
+            <li onClick={()=>  localStorage.setItem('Category',"Electronics")}><a class="dropdown-item" href="#">
             Electronics</a></li>
                        {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">
+            <li onClick={()=>  localStorage.setItem('Category',"Mobiles")}><a class="dropdown-item" href="#">
             Mobile phones</a></li>
                        {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Home</a></li>
+            <li onClick={()=>  localStorage.setItem('Category',"Home")}><a class="dropdown-item" href="#">Home</a></li>
                        {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Fashion</a></li>
+            <li onClick={()=>  localStorage.setItem('Category',"Fashion")}><a class="dropdown-item" href="#">Fashion</a></li>
                        {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Aplliances</a></li>
+            <li onClick={()=>  localStorage.setItem('Category',"Appliances")}><a class="dropdown-item" href="#">Aplliances</a></li>
                        {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Kids</a></li>
+            <li onClick={()=>  localStorage.setItem('Category',"Kids")}><a class="dropdown-item" href="#">Kids</a></li>
            {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Books</a></li>
+            <li onClick={()=>  localStorage.setItem('Category',"Books")}><a class="dropdown-item" href="#">Books</a></li>
                        {/* eslint-disable-next-line */}
-            <li><a class="dropdown-item" href="#">Shoes</a></li>
+            <li onClick={()=>  localStorage.setItem('Category',"Shoes")}><a class="dropdown-item" href="#">Shoes</a></li>
 
             </ul>
         </div>
+        </NavLink>
 
 
         <div className="Bottom">

@@ -18,10 +18,11 @@ function CartContextProider(props){
             const userid =  localStorage.getItem("Userid");
             // eslint-disable-next-line
             const [UserId, setUserId] = useState(userid)
+            const [cat, setcat] = useState("")
 
 
  
-    const value={ UserId , Desdata, setDesdata , UserName}
+    const value={ UserId , Desdata, setDesdata , UserName , cat, setcat}
 
     return(
         <CartContext.Provider value={value}>

@@ -9,6 +9,7 @@ import Checkout from './Pages/Checkout';
 import Placed from './Pages/Placed';
 import Auth from './Pages/Auth';
 import Orders from './Pages/Orders';
+import Category from './Pages/Category';
 
 
 
@@ -29,8 +30,8 @@ function App() {
            <Route exact path='/Placed' component={Placed} />
            <Route exact path='/Auth' component={Auth} />
            <Route exact path='/Orders' component={Orders} />
-
-
+           <Route exact path='/Category' component={Category} />
+           
   </Switch>
   </BrowserRouter>
   </CartContextProider>
