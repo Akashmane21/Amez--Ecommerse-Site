@@ -4,7 +4,7 @@ import './Navbar.scss'
 import {useCounter} from '../../Context/CartContext'
 
 function Navbar() {
-    const {UserId , UserName} = useCounter()
+    const { UserName} = useCounter()
 
     function open(){
 
