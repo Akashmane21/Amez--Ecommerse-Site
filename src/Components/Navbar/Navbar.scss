@@ -35,15 +35,15 @@
 	    display: inline-block;
 	    // text-align: center;
 	    text-decoration: none;
-	    color: #000;
+	    color: rgb(0, 0, 0);
 	    padding: 18px;
 	    text-transform: uppercase;
 	}
 
 	.nav-bar {
 	    // text-align: center;
-	    display:flex;
-	    flex-wrap:wrap;
+	    // display:flex;
+	    // flex-wrap:wrap;
 	    // justify-content:center;
 	    // align-items: center;
 	    position: relative;
@@ -78,21 +78,40 @@
 	}
     .navbar-demo .nav-bar {
         left: -950px;
-        background-color: #000000d9;
+        background-color: #fcfcfc;
         transition: 1s;
         height: 100%;
     }
+.nav-bar{
+    
+}
 
+.profile{
+    padding: 20px;
+    background-color: rgba(190, 180, 28, 0.575)      ;
+    height: 130px;
+    width: 100%;
+    img{
+        height: 50px;
+        width: auto;
+    }
+    h3{
+        font-size: 20px;
+        font-weight: 600;
+
+    }
+
+}
 	.navbar-demo.open-nav  .nav-bar{
 	    left: 0;
-	    width: 80%;
+	    width: 60%;
 	    transition: left 0.5s;
 	    height: 100%;
 	}
 
 	.navbar-demo .nav-bar ul li a {
 	     display: block;
-	     color: #fff;
+	     color: rgb(0, 0, 0);
 	}
 	.navbar-demo.open-nav button.menu-btn i:before {
 	    content: '\f00d ';

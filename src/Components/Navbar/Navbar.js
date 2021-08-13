@@ -1,7 +1,10 @@
 import React from 'react'
 import './Navbar.scss'
 // import '../../CSS/product_card.scss'
+import {useCounter} from '../../Context/CartContext'
+
 function Navbar() {
+    const {UserId , UserName} = useCounter()
 
     function open(){
 
@@ -15,7 +18,12 @@ function Navbar() {
 
 <header id="header" class="navbar-demo">
 	<div class="nav-bar">
-		<ul>
+    <div className="profile">
+
+    <img src="https://www.vippng.com/png/full/80-804695_profile-picture-default-png.png" alt="" />
+		<h3>{UserName}</h3>
+    </div>
+        <ul>
 			<li>
             {/*  eslint-disable-next-line */}
             <a href="#">Home</a>
