@@ -1,7 +1,7 @@
 
 	body {
 	    margin: 0;
-	    font-family: Roboto;
+	    // font-family: Roboto;
 	}
 
 
@@ -21,11 +21,11 @@
 	.navbar-demo .nav-bar ul {
 	    padding: 0;
 	    display: table;
-	    text-align: center;
+	    // text-align: center;
 	    display:flex;
 	    flex-wrap:wrap;
-	    justify-content:center;
-	    align-items: center;
+	    // justify-content:center;
+	    // align-items: center;
 	    margin: 0;
 	    padding: 0;
 	}
@@ -33,7 +33,7 @@
 	.navbar-demo .nav-bar ul li a {
 	    font-size: 18px;
 	    display: inline-block;
-	    text-align: center;
+	    // text-align: center;
 	    text-decoration: none;
 	    color: #000;
 	    padding: 18px;
@@ -41,11 +41,11 @@
 	}
 
 	.nav-bar {
-	    text-align: center;
+	    // text-align: center;
 	    display:flex;
 	    flex-wrap:wrap;
-	    justify-content:center;
-	    align-items: center;
+	    // justify-content:center;
+	    // align-items: center;
 	    position: relative;
 	}
 	.navbar-demo button.menu-btn {
@@ -85,7 +85,7 @@
 
 	.navbar-demo.open-nav  .nav-bar{
 	    left: 0;
-	    width: 100%;
+	    width: 80%;
 	    transition: left 0.5s;
 	    height: 100%;
 	}

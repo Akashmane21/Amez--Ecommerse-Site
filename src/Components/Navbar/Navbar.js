@@ -5,11 +5,8 @@ function Navbar() {
 
     function open(){
 
-        // document.querySelector(document).ready(function () {
-        //     document.querySelector(".menu-btn").click(function (event) {
-              document.querySelector(".navbar-demo").classList.toggle("open-nav");
-        //     });
-        //   });
+         document.querySelector(".navbar-demo").classList.toggle("open-nav");
+        
     }
       
     return (
