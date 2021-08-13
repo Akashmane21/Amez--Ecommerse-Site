@@ -25,12 +25,9 @@ function Category() {
 
           if(Category === "Electronics"){
             setposter("https://hosfeltelectronics.com/wp-content/uploads/2021/05/consumer-electronics-1.jpg")
-
           }
           else if(Category === "Mobiles"){
             setposter("https://i01.appmifile.com/webfile/globalimg/0320/TO-B/New-Product-Banner/Mi-11i-banner-en-PC.jpg")
-
-
           }
           else if(Category === "Home"){
             setposter("https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-taobao-e-commerce-appliances-promotion-poster-banner-image_155307.jpg")
