@@ -6,6 +6,7 @@ import {useCounter} from '../Context/CartContext'
 import firebase from '../Shopie_DB/Config'
 import { useHistory } from "react-router-dom";
 import Nav from "../Components/Nav/Nav";
+import Fade from 'react-reveal/Fade';
 
 function Header() {
   let history = useHistory();
@@ -20,7 +21,6 @@ useEffect(() => {
   const Products = firebase.database().ref(`Users/${UserId}/Cart`);
   Products.on('value' , (snapshot)=>{
     const Products_List = []
-     
     const todos =snapshot.val()
     
     for(let id in todos){
@@ -205,9 +205,11 @@ function logout(){
 
       </header>
 {mobnav ? ( 
+  <Fade left>
   <div className="menumob">
      <Nav />
       </div>
+      </Fade>
 ) : ( 
 " "
 )}

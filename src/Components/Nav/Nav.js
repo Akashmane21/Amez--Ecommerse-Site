@@ -2,7 +2,6 @@ import React from 'react'
 import {useCounter} from '../../Context/CartContext'
 import {NavLink} from 'react-router-dom'
 import { useHistory } from "react-router-dom";
-
 import './Nav.scss'
 function Nav() {
     let history = useHistory();
@@ -17,6 +16,7 @@ function Nav() {
       }
       
     return (
+        
         <div>
             <div className="profile">
 
@@ -59,6 +59,7 @@ function Nav() {
     <h5>logout</h5>
 </div>
         </div>
+        
     )
 }
 
