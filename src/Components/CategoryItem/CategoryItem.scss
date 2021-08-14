@@ -27,6 +27,16 @@
 .Cat_info{
     background-color: rgba(255, 68, 0, 0.267) ;
     padding: 20px;
+    button{
+        border: 0px;
+        padding: 4px 10px;
+        margin: 10px;
+
+        &:hover{
+            background-color: orangered;
+            color: white;
+        }
+    }
 }
 .img{
     padding: 10px;
