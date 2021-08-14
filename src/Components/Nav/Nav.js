@@ -1,10 +1,21 @@
 import React from 'react'
 import {useCounter} from '../../Context/CartContext'
 import {NavLink} from 'react-router-dom'
+import { useHistory } from "react-router-dom";
+
 import './Nav.scss'
 function Nav() {
+    let history = useHistory();
     const { UserName} = useCounter()
-
+    
+    function logout(){
+        localStorage.removeItem("authentication")
+         localStorage.removeItem('Userid');
+         localStorage.removeItem('UserName');
+        history.push('/Auth') 
+      
+      }
+      
     return (
         <div>
             <div className="profile">
@@ -43,7 +54,7 @@ function Nav() {
         
 
 
-<div className="flex logout">
+<div className="flex logout" onClick={logout}>
 <i class="fa fa-sign-out" aria-hidden="true"></i>
     <h5>logout</h5>
 </div>

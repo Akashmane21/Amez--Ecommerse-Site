@@ -190,7 +190,8 @@ function logout(){
               
             </li>
             <li className="login_div">
-              <button className="Login" onClick={logout}>logout</button>
+              <button className="Login" onClick={logout}>logout_<i class="fa fa-sign-out" aria-hidden="true"></i>
+</button>
             </li>
            
         </ul>
