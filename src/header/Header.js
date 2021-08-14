@@ -5,6 +5,7 @@ import Headroom from "react-headroom";
 import {useCounter} from '../Context/CartContext'
 import firebase from '../Shopie_DB/Config'
 import { useHistory } from "react-router-dom";
+import Nav from "../Components/Nav/Nav";
 
 function Header() {
   let history = useHistory();
@@ -13,7 +14,7 @@ function Header() {
   const {UserId , UserName} = useCounter()
 // eslint-disable-next-line
 const [length, setlength] = useState(" ")
-
+const [mobnav, setmobnav] = useState(false)
 useEffect(() => {
 
   const Products = firebase.database().ref(`Users/${UserId}/Cart`);
@@ -49,6 +50,7 @@ function logout(){
   return (
     <>
     <Headroom>
+    
     <div className="search_back">
 
    
@@ -60,16 +62,21 @@ function logout(){
 
       <NavLink exact activeClassName = "active_class" to="/">
 
-        {/* <img alt="feedback animation" src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png" /> */}
           <span className="logo-name">
 
-          {/* <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg>      */}
-          {/* <svg  onClick={()=> console.log("clicked")} xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 9.5H3M21 4.5H3M21 14.5H3M17 19.5H3"/></svg> */}
+
+       {mobnav ? ( 
+        <svg className="mobilenavicon"  xmlns="http://www.w3.org/2000/svg" onClick={()=> setmobnav(!mobnav)}  width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="orangered" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+       ) : ( 
+
+          <svg className="mobilenavicon" onClick={()=> setmobnav(!mobnav)} xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="orangered" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 9.5H3M21 4.5H3M21 14.5H3M17 19.5H3"/></svg>
+       )}
+
 
              <span className="logo-name p-l">Shopie
              
              </span> </span>
-          <svg className="bagsvg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/></svg>
+          <svg className="bagsvg bag" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/></svg>
         </NavLink>
 
         <ul className= "mob_icon">
@@ -163,8 +170,9 @@ function logout(){
               <div className="header_btn">
 
               {/* <span className="cartlen">1</span> */}
+              <i class="fa fa-truck" aria-hidden="true"></i>
 
-         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11.5" cy="8.5" r="5.5"/><path d="M11.5 14v7"/></svg>
+         {/* <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11.5" cy="8.5" r="5.5"/><path d="M11.5 14v7"/></svg> */}
               <h5>Orders</h5>
               </div>
               {/* </a> */}
@@ -193,8 +201,17 @@ function logout(){
 </div> */}
 
       </header>
+{mobnav ? ( 
+  <div className="menumob">
+     <Nav />
+      </div>
+) : ( 
+" "
+)}
+     
 
-      
+
+
    </div>
    </Headroom>
    </>

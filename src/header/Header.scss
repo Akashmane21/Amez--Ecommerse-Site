@@ -406,3 +406,38 @@ a{
 .p-l{
 padding-left: 20px;
 }
+
+.menumob{
+  height: 80vh;
+  width: 80%;
+  background-color: white;
+  transition: left 15s;
+  transition: 10s;
+}
+
+
+@media (min-width: 650px) {
+
+.mobilenavicon{
+    display: none;
+  }
+
+
+}
+
+
+@media (max-width: 650px) {
+
+  .bag{
+      display: none;
+    }
+  
+    
+  }
+  
+.header_btn{
+  i{
+    color: gray;
+    padding-right: 10px;
+  }
+}

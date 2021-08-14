@@ -4,7 +4,6 @@ import Header from '../header/Header';
 import Leftmenu from '../Components/Leftmenu/Leftmenu';
 import {useEffect} from 'react'
 import { useHistory } from "react-router-dom";
-import Navbar from '../Components/Navbar/Navbar';
 
 
 
@@ -33,7 +32,7 @@ function Homepage() {
     <div className="Menu">
 
      <Header />
-     <Navbar />
+     {/* <Navbar /> */}
     </div>
 
      <div className="block">

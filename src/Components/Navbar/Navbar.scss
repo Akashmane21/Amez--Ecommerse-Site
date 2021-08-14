@@ -8,10 +8,11 @@
 
 
 	.navbar-demo {
-	    display: table;
+	    // display: table;
 	    width: 100%;
 	    position: fixed;
-	    z-index: 99;
+        // display: none;
+	    // z-index: 99;
 	}
 
 	.navbar-demo .nav-bar ul li {
@@ -88,7 +89,7 @@
 
 .profile{
     padding: 20px;
-    background-color: rgba(190, 180, 28, 0.575)      ;
+    background-color: rgba(243, 243, 243, 0.644)      ;
     height: 130px;
     width: 100%;
     img{
@@ -104,7 +105,7 @@
 }
 	.navbar-demo.open-nav  .nav-bar{
 	    left: 0;
-	    width: 60%;
+	    width: 80%;
 	    transition: left 0.5s;
 	    height: 100%;
 	}

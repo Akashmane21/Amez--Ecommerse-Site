@@ -1,0 +1,21 @@
+.flex{
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    h5{
+        padding-left: 10px;
+    }
+}
+
+.logout{
+   position: relative;
+   top: 200px;
+   h5{
+       color: white;
+       font-weight: 600;
+   }
+   background-color: rgb(255, 68, 0);
+   i{
+       color: white;
+   }
+}
