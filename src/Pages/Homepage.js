@@ -4,6 +4,7 @@ import Header from '../header/Header';
 import Leftmenu from '../Components/Leftmenu/Leftmenu';
 import {useEffect} from 'react'
 import { useHistory } from "react-router-dom";
+import Rotate from 'react-reveal/Rotate';
 
 
 
@@ -37,7 +38,10 @@ function Homepage() {
 
      <div className="block">
        <div className="left_area">
+       <Rotate top left>
+
         <Leftmenu />
+        </Rotate>
        </div>
        <div className="right_area">
            <Home />

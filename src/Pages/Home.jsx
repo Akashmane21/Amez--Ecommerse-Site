@@ -6,6 +6,7 @@ import Collection from "../Components/Collection/Collection";
 import Deals from "../Components/Deals/Deals";
 import firebase from '../Shopie_DB/Config'
 import AmazonUI from "../Components/Component/AmazonUI";
+import Bounce from 'react-reveal/Bounce';
 
 
 export default function Fav() {
@@ -38,9 +39,10 @@ export default function Fav() {
   return (
       
      <div className="home">
+        <Bounce right>
 
         <Upper />
-     
+     </Bounce>
         <Collection />
         <h1> Today's Deals 🔥</h1>
 

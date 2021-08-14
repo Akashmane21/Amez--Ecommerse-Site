@@ -3,6 +3,7 @@ import './Deals.scss'
 import {NavLink} from 'react-router-dom'
 import firebase from '../../Shopie_DB/Config'
 import {useCounter} from '../../Context/CartContext'
+import Slide from 'react-reveal/Slide';
 
 function Deals({Product}) {
     // eslint-disable-next-line
@@ -64,7 +65,8 @@ function Deals({Product}) {
       }
 
     return (
-    
+      <Slide bottom>
+
         <div className="Deals">
         <NavLink exact activeClassName = "active_class" to="/Detail" onClick={Save}>
 
@@ -119,6 +121,7 @@ function Deals({Product}) {
 
 
         </div>
+        </Slide>
     )
 }
 

@@ -6,6 +6,7 @@ import Data from "../Shopie_DB/Data";
 // import Suggest from '../Components/Suggest/Suggest';
 import {NavLink} from 'react-router-dom'
 import firebase from '../Shopie_DB/Config'
+import Fade from 'react-reveal/Fade';
 
 
 function Detail() {
@@ -97,6 +98,8 @@ function Detail() {
             <Header />
 
             <div className="Detail_box">
+            <Fade left>
+
                 <div className="images">
              
 
@@ -135,8 +138,9 @@ function Detail() {
 
 
 
-
             </div>
+            </Fade>
+            <Fade right>
 
 
             <div className="info">
@@ -190,6 +194,7 @@ function Detail() {
 
 
             </div>
+            </Fade>
             </div>
 
 

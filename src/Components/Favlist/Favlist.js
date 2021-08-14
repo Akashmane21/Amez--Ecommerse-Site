@@ -5,6 +5,7 @@ import './Favlist.scss'
 import {useCounter} from '../../Context/CartContext'
 import {NavLink} from 'react-router-dom'
 import firebase from '../../Shopie_DB/Config'
+import Zoom from 'react-reveal/Zoom';
 
 function Favlist({item}) {
     // eslint-disable-next-line
@@ -56,6 +57,7 @@ function Favlist({item}) {
 
     return (
 <>
+<Zoom left>
 
 <div className="Wishbox">
 <NavLink exact activeClassName = "active_class" to="/Detail" onClick={Save}>
@@ -76,7 +78,7 @@ function Favlist({item}) {
   </div>
 
 </div>
-
+</Zoom>
 </>
 
     )

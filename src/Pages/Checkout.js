@@ -6,6 +6,8 @@ import {useCounter} from '../Context/CartContext'
 import  {useState } from 'react'
 import firebase from '../Shopie_DB/Config'
 import { useHistory } from "react-router-dom";
+import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
 
 
 function Checkout() {
@@ -71,9 +73,10 @@ function Checkout() {
      <div className="Packblock">
   
        <div className="Packleft_area">
+       <Fade left>
 
               <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_99VKMQ.json"  background="transparent"  speed="1"   loop  autoplay></lottie-player>
-
+  </Fade>
             
   
       </div>
@@ -111,6 +114,8 @@ function Checkout() {
             <div className="product">
 
 {Allitems ? Allitems.map((item , index)=> 
+  <Slide right>
+
   <div className="Allinfo">
       <img src={item.Image} alt="" />
       
@@ -121,7 +126,7 @@ function Checkout() {
                             <h6> {item.Total}</h6>
               </div>
   </div>
-
+</Slide>
 
 ) : ( "")}
 </div>

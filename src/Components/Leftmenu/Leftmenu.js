@@ -1,10 +1,12 @@
 import React from 'react'
 import './Leftmenu.scss'
 import {NavLink} from 'react-router-dom'
+import Fade from 'react-reveal/Fade';
 
 
 function Leftmenu() {
     return (
+        <Fade left>
         <div className="Left">
 
         <div className="Head">
@@ -60,6 +62,7 @@ function Leftmenu() {
 </div>
             
         </div>
+        </Fade>
     )
 }
 

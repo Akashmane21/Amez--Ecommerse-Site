@@ -1,9 +1,12 @@
 import React from 'react'
 import './Collection.scss'
 import {NavLink} from 'react-router-dom'
+import LightSpeed from 'react-reveal/LightSpeed';
 
 function Collection() {
     return (
+        <LightSpeed right>
+
         <div className="Coll">
             {/* <h2>Popular Categories ✨</h2> */}
             <NavLink exact activeClassName = "active_class" to="/Category" >
@@ -45,6 +48,7 @@ function Collection() {
             </div>
                 </NavLink>
         </div>
+        </LightSpeed>
     )
 }
 

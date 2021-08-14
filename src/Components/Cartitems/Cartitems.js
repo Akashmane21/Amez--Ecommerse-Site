@@ -4,6 +4,7 @@ import './cartitems.scss'
 import {useCounter} from '../../Context/CartContext'
 import {NavLink} from 'react-router-dom'
 import firebase from '../../Shopie_DB/Config'
+import Rotate from 'react-reveal/Rotate';
 
 function Cartitems({item}) {
 
@@ -65,6 +66,8 @@ function Cartitems({item}) {
 
 
     return (
+        <Rotate bottom right>
+
         <div className="items">
                 <NavLink exact activeClassName = "active_class" to="/Detail" onClick={Save}>
 
@@ -125,6 +128,7 @@ function Cartitems({item}) {
 
 
         </div>
+        </Rotate>
     )
 }
 
