@@ -14,6 +14,7 @@ function Orders() {
   // eslint-disable-next-line
   const [isitems, setisitems] = useState(false)
   const [Orders, setOrders] = useState([])
+  const [isLoading, setisLoading] = useState(true)
   useEffect(() => {
 
     
@@ -21,7 +22,8 @@ function Orders() {
     Products.on('value' , (snapshot)=>{
       const Products_List = []
       const todos =snapshot.val()
-     
+     console.log("Its Coming");
+     setisLoading(false)
       for(let id in todos){
         Products_List.push({id, ...todos[id]})
       }
@@ -83,6 +85,25 @@ var AllOrdersdata = []
         <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/></svg>
         </h6>
 
+        {isitems ? (
+            <div className="noitems">
+            <h1>No Items Here !</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/></svg>
+
+
+            </div>
+        ) : ( " " )}
+
+        {isLoading ? ( 
+          <>
+          <lottie-player src="https://assets8.lottiefiles.com/datafiles/bEYvzB8QfV3EM9a/data.json"  background="transparent"  speed="1"   loop  autoplay></lottie-player>
+
+<h1>Loading</h1>
+
+</>
+         ) : ( 
+          " "
+        )}
 <div className="Ordered_items">
 
 

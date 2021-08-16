@@ -3,6 +3,7 @@ import './CategoryItem.scss'
 import firebase from '../../Shopie_DB/Config'
 import {useCounter} from '../../Context/CartContext'
 import {NavLink} from 'react-router-dom'
+import LightSpeed from 'react-reveal/LightSpeed';
 
 function CategoryItem({Product}) {
     const [status, setstatus] = useState("Add to Cart")
@@ -53,6 +54,8 @@ function CategoryItem({Product}) {
 
 
     return (
+        <LightSpeed left>
+
 
         <div className="category_block">
         <div className="img">
@@ -79,6 +82,7 @@ function CategoryItem({Product}) {
             {/* </div> */}
             </div>
         </div>
+        </LightSpeed>
        
     )
 }

@@ -9,6 +9,7 @@ import firebase from '../Shopie_DB/Config.js'
 import './../CSS/product_card.scss'
 import '../CSS/Category.scss'
 import CategoryItem from '../Components/CategoryItem/CategoryItem';
+import Slide from 'react-reveal/Slide';
 
 function Category() {
   const [Productsdata, setProductsdata] = useState([])
@@ -27,7 +28,7 @@ function Category() {
             setposter("https://hosfeltelectronics.com/wp-content/uploads/2021/05/consumer-electronics-1.jpg")
           }
           else if(Category === "Mobiles"){
-            setposter("https://i01.appmifile.com/webfile/globalimg/0320/TO-B/New-Product-Banner/Mi-11i-banner-en-PC.jpg")
+            setposter("https://i.gadgets360cdn.com/large/Oneplus_nord_ce_5g_amazon_1623046758306.jpg")
           }
           else if(Category === "Home"){
             setposter("https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-taobao-e-commerce-appliances-promotion-poster-banner-image_155307.jpg")
@@ -35,7 +36,7 @@ function Category() {
 
           }
           else if(Category === "Fashion"){
-            setposter("https://iswadeshi.com/wp-content/uploads/2021/05/MAN-FASHION.jpg")
+            setposter("https://planetfashion.imgix.net/img/app/shopmedia/production/1/10-56-4186.jpg?w=992&auto=format")
 
           }
           else if(Category === "Appliances"){
@@ -44,17 +45,17 @@ function Category() {
 
           }
           else if(Category === "Kids"){
-            setposter("https://assetscdn1.paytm.com/images/catalog/view_item/496385/1578050692471.jpg?imwidth=1600&impolicy=hq")
+            setposter("https://cdn.fcglcdn.com/brainbees/images/cattemplate/desktop_cat_suave_cotten_affair_09042021_02.jpg")
 
 
           }
           else if(Category === "Books"){
-            setposter("https://www.universityproducts.com/pub/media/amasty/amoptmobile/wysiwyg/library-prods_png.webp")
+            setposter("https://m.media-amazon.com/images/S/aplus-media/vc/e845f70b-2d78-4476-929e-78429a6ebbec.__CR0,0,970,300_PT0_SX970_V1___.jpg")
 
 
           }
           else if(Category === "Shoes"){
-            setposter("https://www.marketing91.com/wp-content/uploads/2020/06/Nike-advertising.jpg")
+            setposter("https://columbia.scene7.com/is/image/ColumbiaSportswear2/08-01_28839_Facet_Brand_Sub_v2_Poster_XL?$aem_pjpeg$")
 
 
 }
@@ -87,8 +88,10 @@ function Category() {
        </div> */}
        <div className="rightarea">
        <div className="Cate">
+       <Slide top>
 
     <div className="ata">
+    
         <img src={poster} alt=" " />
         {/* <h1>_________</h1> */}
         <div className="up">
@@ -97,6 +100,7 @@ function Category() {
         </div>
 
     </div>
+    </Slide>
         <div className="pro">
 
         <div className="products">

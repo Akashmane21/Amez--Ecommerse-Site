@@ -38,6 +38,7 @@
             font-size: large;
             border-radius: 6px;
             box-shadow: 0px 10px 30px -10px rgb(163, 18, 18);
+            
             &:hover{
                 background-color: red;
                 color: white;
@@ -51,7 +52,6 @@
 .lottie{
     height: 300px;
     width: 100%;
-    // background-color: green;
     overflow: hidden;
 }
 @media (min-width: 650px) {
