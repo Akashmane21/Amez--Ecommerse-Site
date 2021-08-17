@@ -13,6 +13,7 @@ export default function Fav() {
 
 
     const [Productsdata, setProductsdata] = useState([])
+    const [isLoading, setisLoading] = useState(true)
 
 
 
@@ -21,7 +22,7 @@ export default function Fav() {
     Products.on('value' , (snapshot)=>{
       const Products_List = []
       const todos =snapshot.val()
-      console.log(todos);
+      setisLoading(false)
       for(let id in todos){
         // const  ID = id
         Products_List.push({  ...todos[id]})
@@ -45,6 +46,13 @@ export default function Fav() {
      </Bounce>
         <Collection />
         <h1> Today's Deals 🔥</h1>
+        {isLoading ? ( 
+        
+        <lottie-player src="https://assets8.lottiefiles.com/datafiles/bEYvzB8QfV3EM9a/data.json"  background="transparent"  speed="1"   loop  autoplay></lottie-player>
+
+       ) : ( 
+        " "
+      )}
 
         <div className="products">
           {Productsdata ? Productsdata.map((Product , index)=> <Deals Product={Product} key={index}/>) : ""}
