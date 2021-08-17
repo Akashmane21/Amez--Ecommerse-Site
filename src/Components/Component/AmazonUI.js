@@ -29,10 +29,10 @@ function AmazonUI() {
  />
 
 
-<SingleImgCard 
+{/* <SingleImgCard 
    title="Amazon Pay | Buy Google Play recharge code now" link="Buy More"  img = "https://images-eu.ssl-images-amazon.com/images/G/31/img19/AmazonPay/HFC/GPRC/GPRC_Desktop_CC_379x304._SY304_CB659214458_.jpg"
 
-   />
+   /> */}
 
 
  <Card

@@ -5,6 +5,7 @@ import Leftmenu from '../Components/Leftmenu/Leftmenu';
 import {useEffect} from 'react'
 import { useHistory } from "react-router-dom";
 import Rotate from 'react-reveal/Rotate';
+import Footer from '../Components/Footer/Footer';
 
 
 
@@ -47,8 +48,7 @@ function Homepage() {
            <Home />
        </div>
      </div>
-      
-      
+      <Footer />
     </div>
   );
 }
