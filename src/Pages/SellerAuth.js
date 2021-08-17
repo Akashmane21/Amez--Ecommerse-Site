@@ -5,7 +5,7 @@ import firebase from '../Shopie_DB/Config'
 import '../CSS/Auth.scss'
 
 
-function Auth() {
+function SellerAuth() {
     let history = useHistory();
 
     const [username, setusername] = useState('')
@@ -13,53 +13,8 @@ function Auth() {
     const [Phone, setPhone] = useState(' ')
     const [isLogin, setisLogin] = useState(false)
     const [isuser, setisuser] = useState(false)
+    const [Sname, setSname] = useState(' ')
 
-        // function Submit(){
-        //     console.log(username);
-          
-           
-
-        //     // let r = (Math.random() + 1).toString(36).substring(11);
-        //     const name = username+password
-        //     console.log(name);
-
-        //     // const user = firebase.database().ref(`Users/${name}`);
-
-        //     // firebase.database().ref.child("Users").equalTo(name).once("value",snapshot => {
-        //     //     if (snapshot.exists()){
-        //     //       const userData = snapshot.val();
-        //     //       console.log("exists!", userData);
-        //     //     }
-        //     // });
-        //     firebase.database().ref(`Users/${name}/`).once("value", snapshot => {
-        //         if (snapshot.exists()){
-                  
-        //            const email = snapshot.val();
-        //            console.log("exists!" , email);
-        //         }
-        //      });
-
-        //     // firebase.database().ref(`Users/${name}/Auth`)
-        //     // .set({
-        //     // Name :username,
-        //     // Password:password
-        //     //  }).then(res => {
-        //     //     localStorage.setItem("Auth" , "True")
-        //     //     localStorage.setItem('Userid',name);
-        //     //     localStorage.setItem('UserName',username);
-
-        //     //     // history.push('/')
-        //     //     console.log("Account Created");
-        //     //     window.location.reload(false);
-
-        //     //      })
-
-
-
-   
-      
-
-        // }
 
 
         function Login(){
@@ -75,7 +30,7 @@ function Auth() {
         function Signup(){
             const name = username+"_"+password
 
-            firebase.database().ref(`Users/${name}/`).once("value", snapshot => {
+            firebase.database().ref(`Sellers/${name}/`).once("value", snapshot => {
                 if (snapshot.exists()){
                   
                    const email = snapshot.val();
@@ -83,17 +38,18 @@ function Auth() {
                 }
                 else{
                     console.log("The User is Not exists");
-                         firebase.database().ref(`Users/${name}/Auth`)
+                         firebase.database().ref(`Sellers/${name}/Auth`)
                             .set({
                             Name :username,
                             Password:password,
-                            Phone:Phone
+                            Phone:Phone,
+                            Sname : Sname
                             }).then(res => {
                                 localStorage.setItem("authentication" , "True")
                                 localStorage.setItem('Userid',name);
                                 localStorage.setItem('UserName',username);
-
-                                history.push('/')
+                                localStorage.setItem('Sname',Sname);
+                                history.push('/Dashboard')
                                 console.log("Account Created");
                                 window.location.reload(false);
 
@@ -108,28 +64,18 @@ function Auth() {
         function Signin(){
 
             const name = username+"_"+password
-            console.log(name);
 
-            firebase.database().ref(`Users/${name}/`).once("value", snapshot => {
+            firebase.database().ref(`Sellers/${name}/`).once("value", snapshot => {
                 if (snapshot.exists()){
-                  
-                   const email = snapshot.val();
-                   console.log("exists!" , email);
-                   firebase.database().ref(`Users/${name}/Auth`)
-                   .set({
-                   Name :username,
-                   Password:password,
-                   Phone:Phone
-                   }).then(res => {
+               
                        localStorage.setItem("authentication" , "True")
                        localStorage.setItem('Userid',name);
                        localStorage.setItem('UserName',username);
 
-                       history.push('/')
+                       history.push('/Dashboard')
                        console.log("Account Created");
                        window.location.reload(false);
 
-                       })
 
                 }
                 else{
@@ -144,7 +90,6 @@ function Auth() {
     return (
 
         <div className="Auth_page">
-        {/* <h1>Welcome to Shoppie</h1> */}
         <div className="Auth">
 
             <div className="Lottie">
@@ -160,13 +105,13 @@ function Auth() {
                     {isLogin ? ( 
                         <center> <h2>-- Sign in --</h2></center>
                     ) : ( 
-                        <center> <h2>-- Sign up --</h2></center>
+                        <center> <h2>- -Sign up --</h2></center>
                     )}
                    
                         <h2>Name : </h2>
                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                          <input placeholder="Enter Name" onChange={name => setusername(name.target.value)} required/>
-                        
+                       
                          {isLogin ? (
 
                   ""
@@ -175,6 +120,11 @@ function Auth() {
                             <h2>Phone Number :</h2>
                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         <input placeholder="Enter Phone Number :" onChange={number => setPhone(number.target.value)} required />
+                      
+                        <h2>Store Name : </h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                         <input placeholder="Enter Store Name" onChange={name => setSname(name.target.value)} required/>
+                        
                        </>
                           ) }
                       
@@ -204,7 +154,6 @@ function Auth() {
 
                        <h6>Already Have a Account ? <span onClick={Login}>Login</span></h6>
                         ) }
-                        {/* <button onClick={Submit} className="login">Login</button> */}
 
                 </div>
           
@@ -214,4 +163,4 @@ function Auth() {
     )
 }
 
-export default Auth
+export default SellerAuth

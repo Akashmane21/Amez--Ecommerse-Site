@@ -11,6 +11,8 @@ function Choose() {
 
     function Seller(){
         
+        history.push('/SellerAuth') 
+
     }
     return (
         <div className="Choose">

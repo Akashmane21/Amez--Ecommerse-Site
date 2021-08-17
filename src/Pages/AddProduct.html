@@ -1,0 +1,401 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopie</title>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<!-- <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script> -->
+<style>
+#search{
+    background-color: #0d0e0e5d
+}
+#Poster{
+    height: 300px;
+    border-radius: 20px;
+    align-items: center;
+    margin-left: 50px;
+    /* margin: 7px; */
+}
+input{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    outline-width: 0;
+    
+}
+textarea{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    outline-width: 0;
+    width: 70%;
+}
+Button{
+    background-color: rgb(189, 108, 3);
+    border-radius: 10px;
+    margin: 20px;
+    font-size: 20px;
+    outline-width: 0;
+    padding: 5px;
+    color: white;
+    border: 0px;
+    padding: 10px 20px;
+    font-weight: 700;
+
+
+}
+Button:hover{
+    background-color: white;
+    color: orange;
+    cursor: pointer;
+}
+body{
+    font-size: 20px;
+    background-color: #0d1117;
+    color: orange;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sec{
+    background-color: #1b1f23;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+ input, select, textarea, optgroup {
+  font: inherit;
+  margin: 0;
+  color: rgb(250, 246, 246);
+  background-color: #30363d;
+  padding: 6px;
+  border: 0px;
+  outline-width: 0px;
+  margin-right: 15px;
+  border-radius: 7px;
+}
+
+.item{
+  color: white;
+  font-size: 20px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+</style>
+</head>
+<body>
+    
+
+<div class="main">
+<div class="sec">
+
+    Title :
+    <input type="text" id="Title">
+</div>
+
+<div class="sec">
+    Ratings :
+   <input type="text" id="Ratings">
+</div>
+
+
+<div class="sec">
+    M.R.P. :
+    <input type="text" id="mrp">
+</div>
+
+<div class="sec">    
+Price :
+<input type="text" id="Price">
+
+</div>
+
+
+<div class="sec">    
+    Discount :
+    <input type="text" id="Discount">
+    
+    </div>
+
+
+<div class="sec">    
+    Details :
+    <input type="text" id="Details">
+    
+    </div>
+
+<div class="sec"> 
+    Image1 :
+    <input type="text" id="Image1">
+    Image2 :
+    <input type="text" id="Image2">
+    Image3 :
+    <input type="text" id="Image3">
+</div>
+
+
+<div class="dropdown">
+<select name="mySelect" id="mySelect">
+<option value="All" className="item">All</option>
+<option value="Home" className="item">Home</option>
+<option value="Fashion" className="item">Fashion</option>
+<option value="Electronics" className="item">Electronics</option>
+<option value="Mobiles" className="item">Mobiles</option>
+<option value="Dresses" className="item">Dresses</option>
+<option value="Shoes" className="item">Shoes</option>
+<option value="Watches" className="item">Watches</option>
+<option value="Appliances" className="item">Appliances</option>
+<option value="Kids" className="item">Kids</option>
+<option value="Books" className="item">Books</option>
+
+</select>
+
+
+  
+     
+  </div>
+
+
+  <div class="sec">
+
+  Offer :<br>
+  <div id="rates">
+     <input type="radio" id="r1" name="Trend" value="True"> True
+     <input type="radio" id="r2" name="Trend" value="False"> False
+     
+   </div>
+   </div>
+
+  
+<div class="sec">
+
+    Brand :
+    <input type="text" id="Brand">
+</div>
+
+
+</div>
+
+<Button onclick=insert()>Submit</Button>
+<!-- <Button onclick=Offers()>MOTD</Button> -->
+
+ 
+<div class="sec">    
+    ID :
+    <input type="text" id="ID">
+     
+        Features :
+        <input type="text" id="Features">
+        <Button onclick=AddFeature()>Add Feature</Button>
+ </div>
+
+
+ 
+<div class="sec">    
+    ID :
+    <input type="text" id="ID2">
+     
+        About :
+        <input type="text" id="About">
+        <Button onclick=AddAbout()>Add About</Button>
+ </div>
+
+
+</div>
+
+
+<script id="secScript">
+     
+    //-------------------------Config-------------------------------------------------------------------------------
+    
+    var firebaseConfig = {
+        apiKey: "AIzaSyB9LIsJqMgwE2BLx33qfKRM6THkGTdfNbE",
+  authDosec: "shopie-9193a.firebaseapp.com",
+  projectId: "shopie-9193a",
+  storageBucket: "shopie-9193a.appspot.com",
+  messagingSenderId: "297841615372",
+  appId: "1:297841615372:web:f7c1c48deb0650147d8429",
+  measurementId: "G-D5BMVQQCDL"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+console.log(firebase);
+
+
+
+
+var database = firebase.database();
+var ref = database.ref('scores');
+
+// -------------Inserting-------
+
+function insert(){
+    var Name = document.getElementById('Title').value
+    
+    var  Ratings =        document.getElementById('Ratings').value
+    var MRP  =         document.getElementById('mrp').value
+     var   Price=        document.getElementById('Price').value
+     var Trend = document.querySelector('input[name="Trend"]:checked').value;
+
+    var  Image1 =         document.getElementById('Image1').value
+    var  Image2 =         document.getElementById('Image2').value
+    var  Image3 =         document.getElementById('Image3').value
+    var Details =          document.getElementById('Details').value
+    var Categary = document.getElementById("mySelect").value
+    var Discount = document.getElementById("Discount").value
+
+    const movie = { 
+        Name : Name , 
+        Ratings : Ratings , 
+        MRP : MRP , 
+        Price : Price , 
+        Image1 : Image1 , 
+        Image2 : Image2 , 
+        Image3 : Image3 ,
+        Details : Details , 
+        Features:"",
+        Categary : Categary , 
+        Trend:Trend,
+        Discount:Discount
+
+   
+
+    }
+ 
+
+var mov = database.ref(`Products/`);
+
+mov.push(movie).then(res => {
+console.log("address key = " + res.key) ;
+alert(`Movie  ${Name} Added in the Movie DB :`);
+document.getElementById("ID").value=res.key
+document.getElementById("ID2").value=res.key
+
+
+   })
+
+
+
+
+
+
+
+}
+
+
+
+
+
+function Offers(){
+    var Name = document.getElementById('Title').value
+    
+    var  Ratings =        document.getElementById('Ratings').value
+    var MRP  =         document.getElementById('mrp').value
+     var   Price=        document.getElementById('Price').value
+
+    var  Image1 =         document.getElementById('Image1').value
+    var  Image2 =         document.getElementById('Image2').value
+    var  Image3 =         document.getElementById('Image3').value
+    var Details =          document.getElementById('Details').value
+    var Categary = document.getElementById("mySelect").value
+
+    const movie = { 
+        Name : Name , 
+        Ratings : Ratings , 
+        MRP : MRP , 
+        Price : Price , 
+        Image1 : Image1 , 
+        Image2 : Image2 , 
+        Image3 : Image3 ,
+        Features:"",
+        About :"",
+        Details : Details , 
+ 
+        Categary : Categary , 
+
+   
+
+    }
+ 
+
+var mov = database.ref(`Offers/`);
+
+mov.push(movie).then(res => {
+console.log("address key = " + res.key) ;
+alert(`Movie  ${Name} Added in the Movie DB :`);
+document.getElementById("id").value=res.key
+
+   })
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+function AddFeature(){
+
+var Feature = document.getElementById('Features').value
+
+    const Featuresdata = { 
+        Features:Feature,
+    }
+
+    var id1 =  document.getElementById('ID').value
+    firebase.database().ref(`Products/${id1}/Features/`).push(Featuresdata).then(res => {
+    alert(`Links Added in the Movie : ${Title}`);
+    document.getElementById('Features').value=" ";
+
+})
+
+
+
+}
+function AddAbout(){
+    var Abouts = document.getElementById('About').value
+
+const Aboutdata = { 
+    About:Abouts,
+}
+
+var id1 =  document.getElementById('ID').value
+firebase.database().ref(`Products/${id1}/About/`).push(Aboutdata).then(res => {
+alert(`Links Added in the Movie : ${Title}`);
+document.getElementById('About').value=" ";
+
+})
+
+}
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

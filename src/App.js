@@ -11,6 +11,8 @@ import Auth from './Pages/Auth';
 import Orders from './Pages/Orders';
 import Category from './Pages/Category';
 import Choose from './Pages/Choose';
+import SellerAuth from './Pages/SellerAuth';
+import Dashboard from './Pages/Dashboard';
 
 
 
@@ -33,6 +35,9 @@ function App() {
            <Route exact path='/Orders' component={Orders} />
            <Route exact path='/Category' component={Category} />
            <Route exact path='/Choose' component={Choose} />
+           <Route exact path='/SellerAuth' component={SellerAuth} />
+           <Route exact path='/Dashboard' component={Dashboard} />
+
 
   </Switch>
   </BrowserRouter>

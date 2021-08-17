@@ -38,10 +38,10 @@ useEffect(() => {
 }, [])
 
 function logout(){
-  localStorage.removeItem("authentication")
+   localStorage.removeItem("authentication")
    localStorage.removeItem('Userid');
    localStorage.removeItem('UserName');
-  history.push('/Auth') 
+   history.push('/Choose') 
 
 }
 

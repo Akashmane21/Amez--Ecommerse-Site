@@ -1,0 +1,129 @@
+iframe{
+    height: 100%;
+    width: 100%;
+}
+
+#search{
+    background-color: #0d0e0e5d
+}
+#Poster{
+    height: 300px;
+    border-radius: 20px;
+    align-items: center;
+    margin-left: 50px;
+    /* margin: 7px; */
+}
+input{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    outline-width: 0;
+    
+}
+textarea{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    outline-width: 0;
+    width: 70%;
+}
+
+.dash{
+    background-color: #0d1117;
+.logot{
+display: flex;
+justify-content: space-around;
+background-color: black;
+    h1{
+        font-size: 40px;
+        color: white;
+        // text-transform: uppercase;
+        text-align: center;
+        padding: 20px;
+        font-weight: 700;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    
+button{
+    background-color: rgb(189, 108, 3);
+    border-radius: 10px;
+    margin: 20px;
+    font-size: 20px;
+    outline-width: 0;
+    padding: 5px;
+    color: white;
+    border: 0px;
+    padding: 10px 20px;
+    font-weight: 700;
+
+
+}
+button:hover{
+    background-color: white;
+    color: orange;
+    cursor: pointer;
+}
+}
+
+button{
+    background-color: rgb(189, 108, 3);
+    border-radius: 10px;
+    margin: 20px;
+    font-size: 20px;
+    outline-width: 0;
+    padding: 5px;
+    color: white;
+    border: 0px;
+    padding: 10px 20px;
+    font-weight: 700;
+
+
+}
+button:hover{
+    background-color: white;
+    color: orange;
+    cursor: pointer;
+}
+}
+.sec{
+    font-size: 20px;
+    color: orange;
+    input{
+        margin-left: 30px;
+    }
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.gg{
+    margin-left: 20px;
+    width: 100%;
+}
+.sec{
+    background-color: #1b1f23;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+ input, select, textarea, optgroup {
+  font: inherit;
+  margin: 0;
+  color: rgb(250, 246, 246);
+  background-color: #30363d;
+  padding: 6px;
+  border: 0px;
+  outline-width: 0px;
+  margin-right: 15px;
+  border-radius: 7px;
+}
+
+.item{
+  color: white;
+  font-size: 20px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
