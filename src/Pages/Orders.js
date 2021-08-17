@@ -95,11 +95,9 @@ var AllOrdersdata = []
         ) : ( " " )}
 
         {isLoading ? ( 
-          <>
+        
           <lottie-player src="https://assets8.lottiefiles.com/datafiles/bEYvzB8QfV3EM9a/data.json"  background="transparent"  speed="1"   loop  autoplay></lottie-player>
 
-
-</>
          ) : ( 
           " "
         )}

@@ -13,6 +13,7 @@ function Fav() {
 
     const [isitems, setisitems] = useState(false)
     const [favdata, setfavdata] = useState([])
+    const [isLoading, setisLoading] = useState(true)
 
 
 useEffect(() => {
@@ -22,7 +23,8 @@ useEffect(() => {
     Products.on('value' , (snapshot)=>{
       const Products_List = []
       const todos =snapshot.val()
-      console.log(todos);
+      setisLoading(false)
+
       for(let id in todos){
 
         const  ID = id
@@ -64,6 +66,13 @@ useEffect(() => {
 
             </div>
         ) : ( " " )}
+        {isLoading ? ( 
+        
+        <lottie-player src="https://assets8.lottiefiles.com/datafiles/bEYvzB8QfV3EM9a/data.json"  background="transparent"  speed="1"   loop  autoplay></lottie-player>
+
+       ) : ( 
+        " "
+      )}
 <div className="Fav_items">
 
         {favdata ? favdata.map((item , key)=> <Favlist item={item} key={key} />) : ""}

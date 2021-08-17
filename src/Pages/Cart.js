@@ -12,6 +12,8 @@ function Cart() {
     const [isitems, setisitems] = useState(false)
     const [CartItem, setCartItem] = useState([])
     const [ActualTime, setActualTime] = useState("")
+    const [isLoading, setisLoading] = useState(true)
+
 
 useEffect(() => {
 
@@ -21,6 +23,7 @@ useEffect(() => {
 
 
       const todos =snapshot.val()
+      setisLoading(false)
      
       for(let id in todos){
         Products_List.push({id, ...todos[id]})
@@ -101,6 +104,13 @@ useEffect(() => {
 
             </div>
         ) : ( " " )}
+          {isLoading ? ( 
+        
+          <lottie-player src="https://assets8.lottiefiles.com/datafiles/bEYvzB8QfV3EM9a/data.json"  background="transparent"  speed="1"   loop  autoplay></lottie-player>
+
+         ) : ( 
+          " "
+        )}
             <div className="cart_iems">
 
                     {CartItem ? CartItem.map((item , key)=> <Cartitems item={item} key={key} />) : ""}
