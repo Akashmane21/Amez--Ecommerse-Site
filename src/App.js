@@ -10,6 +10,7 @@ import Placed from './Pages/Placed';
 import Auth from './Pages/Auth';
 import Orders from './Pages/Orders';
 import Category from './Pages/Category';
+import Choose from './Pages/Choose';
 
 
 
@@ -31,7 +32,8 @@ function App() {
            <Route exact path='/Auth' component={Auth} />
            <Route exact path='/Orders' component={Orders} />
            <Route exact path='/Category' component={Category} />
-           
+           <Route exact path='/Choose' component={Choose} />
+
   </Switch>
   </BrowserRouter>
 

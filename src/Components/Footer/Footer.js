@@ -9,18 +9,14 @@ function Footer() {
 
               <i onClick={up} class="fa fa-angle-up" aria-hidden="true"></i>
 
-
-        
+   
             <div className="Icons">
              <a href="https://www.linkedin.com/in/akashmane21/" > <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>  
-             <a href="https://www.linkedin.com/in/akashmane21/" >   <i class="fa fa-instagram" aria-hidden="true"></i></a> 
-             <a href="https://www.linkedin.com/in/akashmane21/" >  <i class="fa fa-facebook-square" aria-hidden="true"></i></a> 
+             <a href="https://www.instagram.com/akash_mane21/" >   <i class="fa fa-instagram" aria-hidden="true"></i></a> 
+             <a href="https://www.facebook.com/akash.mane.777363/" >  <i class="fa fa-facebook-square" aria-hidden="true"></i></a> 
             </div>
-      
-
-
-
-            <h1>Made with 💖 by Akash Mane</h1>
+   
+            <h1>Made with ❤️ by Akash Mane</h1>
         </div>
     )
 }

@@ -18,13 +18,13 @@ function Homepage() {
     
     if(localStorage.getItem("authentication")==null){
      
-      history.push('/Auth') 
+      history.push('/Choose') 
 
      }
 
   else{
-      console.log(localStorage.getItem("cartData"));
-     }
+
+  }
 // eslint-disable-next-line
   }, [])
 
