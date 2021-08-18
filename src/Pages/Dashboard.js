@@ -119,7 +119,7 @@ function AddFeature(){
         localStorage.removeItem("authentication")
         localStorage.removeItem('Userid');
         localStorage.removeItem('UserName');
-        history.push('/Choose') 
+        history.push('/') 
      
     }
 

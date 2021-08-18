@@ -1,9 +1,24 @@
-import React from 'react'
+import React , {useEffect} from 'react'
 import '../CSS/Choose.scss'
 import { useHistory } from "react-router-dom";
 
 function Choose() {
     let history = useHistory();
+
+    useEffect(() => {
+
+    
+        if(localStorage.getItem("authentication")!=null){
+         
+          history.push('/Home') 
+    
+         }
+    
+      else{
+    
+      }
+    // eslint-disable-next-line
+      }, [])
 
     function Customer(){
         history.push('/Auth') 

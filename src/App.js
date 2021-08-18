@@ -25,7 +25,7 @@ function App() {
     <BrowserRouter>
 
     <Switch>
-           <Route exact path='/' component={Homepage} />
+           <Route exact path='/' component={Choose} />
            <Route exact path='/Cart' component={Cartpage} />
            <Route exact path='/Wishlist' component={WishlistPage} />
            <Route exact path='/Detail' component={Detail} />
@@ -34,7 +34,7 @@ function App() {
            <Route exact path='/Auth' component={Auth} />
            <Route exact path='/Orders' component={Orders} />
            <Route exact path='/Category' component={Category} />
-           <Route exact path='/Choose' component={Choose} />
+           <Route exact path='/Home' component={Homepage} />
            <Route exact path='/SellerAuth' component={SellerAuth} />
            <Route exact path='/Dashboard' component={Dashboard} />
 

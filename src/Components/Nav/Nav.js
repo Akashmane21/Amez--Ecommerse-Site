@@ -11,7 +11,7 @@ function Nav() {
         localStorage.removeItem("authentication")
          localStorage.removeItem('Userid');
          localStorage.removeItem('UserName');
-        history.push('/Auth') 
+        history.push('/') 
       
       }
       

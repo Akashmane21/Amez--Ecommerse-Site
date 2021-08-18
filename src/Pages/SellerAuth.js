@@ -51,7 +51,7 @@ function SellerAuth() {
                                 localStorage.setItem('Sname',Sname);
                                 history.push('/Dashboard')
                                 console.log("Account Created");
-                                window.location.reload(false);
+                                window.location.reload();
 
                                 })
 
@@ -74,7 +74,7 @@ function SellerAuth() {
 
                        history.push('/Dashboard')
                        console.log("Account Created");
-                    //    window.location.reload(false);
+                       window.location.reload();
 
 
                 }
