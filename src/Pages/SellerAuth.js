@@ -11,7 +11,7 @@ function SellerAuth() {
     const [username, setusername] = useState('')
     const [password, setpassword] = useState('')
     const [Phone, setPhone] = useState(' ')
-    const [isLogin, setisLogin] = useState(false)
+    const [isLogin, setisLogin] = useState(true)
     const [isuser, setisuser] = useState(false)
     const [Sname, setSname] = useState(' ')
 

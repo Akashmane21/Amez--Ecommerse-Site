@@ -1,21 +1,23 @@
 .Choose{
     // text-align: center;
     padding: 20px;
-    background-image: url("https://miro.medium.com/max/3002/1*dP81IJq-tGFxy1rIK3RYsg.png");
+    // background-image: url("https://miro.medium.com/max/3002/1*dP81IJq-tGFxy1rIK3RYsg.png");
+// background-color: #eaeded;
+background-image: linear-gradient(to right, rgb(182, 173, 173) , rgb(176, 104, 218));
 
     height: 120vh;
     h1{
         font-size: 52px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-weight: 600;
-        color: rgb(175, 175, 175);
-        text-transform: uppercase;
+        color: rgb(107, 101, 101);
+        // text-transform: uppercase;
     }
 }
 .box{
     margin-top: 20px;
     margin: 20px;
-    align-items: center;
+    // align-items: center;
     padding: 10px;
     background-color: white;
     border-radius: 10px;
@@ -39,14 +41,24 @@
 .boxes{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    // align-items: center;
+    // justify-content: center;
     flex-wrap: wrap;
     margin-top: 60px;
     // margin-left: 30px;
 
 }
 @media (min-width: 650px) {
+    .boxes{
+        // display: flex;
+        // flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        // flex-wrap: wrap;
+        // margin-top: 60px;
+        // margin-left: 30px;
+    
+    }
     .Choose{
         
         background-image: url("https://static.vecteezy.com/system/resources/previews/000/954/093/large_2x/shopping-online-concept-with-cart-on-mobile-phone-vector.jpg");

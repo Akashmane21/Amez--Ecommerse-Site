@@ -138,7 +138,7 @@ Your Shop is Ready          <svg xmlns="http://www.w3.org/2000/svg" width="22" h
 <hr />
            </h1>
 
-<div className="boxes">
+<div className="boxesss">
     <div className="box" onClick={()=> setisAdd(!isAdd) }>
     <a href="#Add" >      <img src="https://st3.depositphotos.com/1915171/32517/v/950/depositphotos_325177164-stock-illustration-add-shopping-cart-line-icon.jpg" alt= " " />
     <h3>Add Your Products</h3> </a>

@@ -195,8 +195,15 @@ button:hover{
   
     }
 }
-
-
+a{
+    text-decoration: none;
+    
+}
+.boxes  {
+    display: flex;
+    // width: 80%;
+    justify-content: center;
+}
 @media (min-width: 650px) {
     .shopproducts{
         display: flex;
@@ -205,12 +212,19 @@ button:hover{
         margin: 20px 100px;
         align-items:unset;
     text-align: unset;
-    justify-content: unset;
+    justify-content: center;
     }
     .boxes  {
         display: flex;
         // width: 80%;
+        justify-content: flex-start;
+    }
+
+    .boxesss{
+        display: flex;
+        // width: 80%;
         justify-content: center;
+        padding-bottom: 110px;
     }
     .img{
        display: flex;
