@@ -204,6 +204,14 @@ a{
     // width: 80%;
     justify-content: center;
 }
+.boxesss{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // width: 80%;
+    justify-content: center;
+    padding-bottom: 110px;
+}
 @media (min-width: 650px) {
     .shopproducts{
         display: flex;

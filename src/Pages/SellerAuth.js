@@ -3,6 +3,7 @@ import React ,{useState } from 'react'
 import { useHistory } from "react-router-dom";
 import firebase from '../Shopie_DB/Config'
 import '../CSS/Auth.scss'
+import Fade from 'react-reveal/Fade';
 
 
 function SellerAuth() {
@@ -91,12 +92,16 @@ function SellerAuth() {
 
         <div className="Auth_page">
         <div className="Auth">
+        <Fade left>
 
             <div className="Lottie">
 
             <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_yr6zz3wv.json"  background="transparent"  speed="1"   loop  autoplay></lottie-player>
 
             </div>
+</Fade>
+
+<Fade right>
 
                 <div className="form">
 
@@ -156,7 +161,7 @@ function SellerAuth() {
                         ) }
 
                 </div>
-          
+          </Fade>
         </div>
 
         </div>

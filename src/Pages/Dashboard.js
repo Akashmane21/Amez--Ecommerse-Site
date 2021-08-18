@@ -2,8 +2,14 @@ import React , {useState , useEffect} from 'react'
 import '../CSS/Dashboard.scss'
 import {useCounter} from '../Context/CartContext'
 import { useHistory } from "react-router-dom";
+// import Bounce from 'react-reveal/Bounce';
+import LightSpeed from 'react-reveal/LightSpeed';
+import Slide from 'react-reveal/Slide';
+import Zoom from 'react-reveal/Zoom';
+import Flip from 'react-reveal/Flip';
 
 import firebase from '../Shopie_DB/Config'
+import Footer from '../Components/Footer/Footer';
 
 
 export default function Dashboard() {
@@ -125,36 +131,57 @@ function AddFeature(){
 
 
     return (
+        <>
         <div className="dash">
         {/* <Header /> */}
+        <Slide top>
+
         <div className="logot">
             <h1>Shoppie          <svg className="" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/></svg>
            </h1>
         <button onClick={Logout}>Logout_<i class="fa fa-sign-out" aria-hidden="true"></i></button>
         </div>
+        </Slide>
+        <LightSpeed left>
+
         <h1 className="" >Hello {UserName} 👋</h1>
+        </LightSpeed>
+        <LightSpeed right>
+
 <h1>
 Your Shop is Ready          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="orangered" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-<hr />
+
+
            </h1>
+           </LightSpeed>
+           <hr />
 
 <div className="boxesss">
+<Zoom left>
+
     <div className="box" onClick={()=> setisAdd(!isAdd) }>
     <a href="#Add" >      <img src="https://st3.depositphotos.com/1915171/32517/v/950/depositphotos_325177164-stock-illustration-add-shopping-cart-line-icon.jpg" alt= " " />
     <h3>Add Your Products</h3> </a>
     </div>
+    </Zoom>
+
+    <Zoom bottom>
+
   <div className="box" onClick={()=> setisProducts(!isProducts)}>
   <a href="#Shop" >     <img src="https://previews.123rf.com/images/abscent/abscent1706/abscent170600068/80125240-paper-shopping-bag-full-of-groceries-products-grocery-store-supermarket-fresh-organic-food-and-drink.jpg" alt=" " />
         <h3> Your Products</h3></a>
     </div> 
+    </Zoom>
+    <Zoom right>
 
     <div className="box" onClick={()=> history.push('/')  }>
     <img src="https://static.vecteezy.com/system/resources/previews/001/222/484/non_2x/e-commerce-online-shopping-concept-vector.jpg" alt= " " />
         <h3> GO to Homepage</h3>
 
     </div>
+    </Zoom>
 </div>
-{isProducts ? (
+{/* {isProducts ? ( */}
     <>
     <div className="boxess" id="Shop">
     <h3>Your All Products         <svg className="" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/></svg>
@@ -162,6 +189,7 @@ Your Shop is Ready          <svg xmlns="http://www.w3.org/2000/svg" width="22" h
     
     {Shopdata ? Shopdata.map((Product , index)=>
     <>
+    <Flip top>
 
 <div className="shopproducts">
 <img src={Product.Image1} alt=" " />
@@ -171,14 +199,13 @@ Your Shop is Ready          <svg xmlns="http://www.w3.org/2000/svg" width="22" h
 <h4>{Product.Price}</h4>
 </div>
 </div>
-    
+    </Flip>
      
-    {/* <CategoryItem Product={Product} key={index}/>   */}
 </>
      ) : ""}
      </div>
 </>
- ) : ( " ")}
+ {/* ) : ( " ")} */}
 
 {isAdd ? ( 
     <>
@@ -308,6 +335,9 @@ ID : {dataID}
 
 
 </div>
+
+<Footer />
+</>
         
     )
 }

@@ -3,14 +3,14 @@
     padding: 20px;
     // background-image: url("https://miro.medium.com/max/3002/1*dP81IJq-tGFxy1rIK3RYsg.png");
 // background-color: #eaeded;
-background-image: linear-gradient(to right, rgb(182, 173, 173) , rgb(176, 104, 218));
+background-image: linear-gradient(to right, rgb(26, 158, 136) , rgb(176, 104, 218));
 
     height: 120vh;
-    h1{
+    h2{
         font-size: 52px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-weight: 600;
-        color: rgb(107, 101, 101);
+        color: rgb(255, 0, 0);
         // text-transform: uppercase;
     }
 }
@@ -63,12 +63,12 @@ background-image: linear-gradient(to right, rgb(182, 173, 173) , rgb(176, 104, 2
         
         background-image: url("https://static.vecteezy.com/system/resources/previews/000/954/093/large_2x/shopping-online-concept-with-cart-on-mobile-phone-vector.jpg");
     background-size:cover;
-    h1{
+    h2{
         font-size: 50px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-weight: 600;
-        color: rgb(0, 0, 0);
-        text-transform: uppercase;
+        color: rgb(255, 4, 4);
+        // text-transform: uppercase;
     }
    
     } 
