@@ -140,13 +140,13 @@ Your Shop is Ready          <svg xmlns="http://www.w3.org/2000/svg" width="22" h
 
 <div className="boxes">
     <div className="box" onClick={()=> setisAdd(!isAdd) }>
-            <img src="https://st3.depositphotos.com/1915171/32517/v/950/depositphotos_325177164-stock-illustration-add-shopping-cart-line-icon.jpg" alt= " " />
-    <h3>Add Your Products</h3>
+    <a href="#Add" >      <img src="https://st3.depositphotos.com/1915171/32517/v/950/depositphotos_325177164-stock-illustration-add-shopping-cart-line-icon.jpg" alt= " " />
+    <h3>Add Your Products</h3> </a>
     </div>
-    <div className="box" onClick={()=> setisProducts(!isProducts)}>
-        <img src="https://previews.123rf.com/images/abscent/abscent1706/abscent170600068/80125240-paper-shopping-bag-full-of-groceries-products-grocery-store-supermarket-fresh-organic-food-and-drink.jpg" alt=" " />
-        <h3> Your Products</h3>
-    </div>
+  <div className="box" onClick={()=> setisProducts(!isProducts)}>
+  <a href="#Shop" >     <img src="https://previews.123rf.com/images/abscent/abscent1706/abscent170600068/80125240-paper-shopping-bag-full-of-groceries-products-grocery-store-supermarket-fresh-organic-food-and-drink.jpg" alt=" " />
+        <h3> Your Products</h3></a>
+    </div> 
 
     <div className="box" onClick={()=> history.push('/')  }>
     <img src="https://static.vecteezy.com/system/resources/previews/001/222/484/non_2x/e-commerce-online-shopping-concept-vector.jpg" alt= " " />
@@ -156,7 +156,7 @@ Your Shop is Ready          <svg xmlns="http://www.w3.org/2000/svg" width="22" h
 </div>
 {isProducts ? (
     <>
-    <div className="boxess">
+    <div className="boxess" id="Shop">
     <h3>Your All Products         <svg className="" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/></svg>
     :    </h3>
     
@@ -182,7 +182,7 @@ Your Shop is Ready          <svg xmlns="http://www.w3.org/2000/svg" width="22" h
 
 {isAdd ? ( 
     <>
-    <div class="main">
+    <div class="main" id="Add">
 
 
     <div class="sec">
