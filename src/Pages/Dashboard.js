@@ -1,9 +1,11 @@
-import React , {useState} from 'react'
+import React , {useState , useEffect} from 'react'
 import '../CSS/Dashboard.scss'
 import {useCounter} from '../Context/CartContext'
 import { useHistory } from "react-router-dom";
 
 import firebase from '../Shopie_DB/Config'
+
+
 export default function Dashboard() {
     let history = useHistory();
 
@@ -11,6 +13,22 @@ export default function Dashboard() {
     const {UserName } = useCounter()
 
     const [isSumit, setisSumit] = useState(false)
+    const [isAdd, setisAdd] = useState(false)
+    const [Shopdata, setShopdata] = useState([])
+    const [isProducts, setisProducts] = useState(false)
+
+        useEffect(() => {
+            firebase.database().ref(`Products/`).orderByChild("Shop").equalTo(UserName).once("value", snapshot => {
+                const Moviesdblist = []
+                const todos =snapshot.val()
+                for(let id in todos){ Moviesdblist.push({id, ...todos[id]}) }
+                const reversed = Moviesdblist.reverse();
+                console.log(reversed)
+                setShopdata(reversed)
+              })
+
+        }, [UserName])
+    
 
     function insert(){
         console.log("clicked");
@@ -36,7 +54,8 @@ export default function Dashboard() {
             Image3 : Image3 ,
             Features:"",
             Categary : Categary , 
-            Discount:Discount
+            Discount:Discount , 
+            Shop : UserName
     
        
     
@@ -113,11 +132,59 @@ function AddFeature(){
            </h1>
         <button onClick={Logout}>Logout_<i class="fa fa-sign-out" aria-hidden="true"></i></button>
         </div>
-        <h1>Hello {UserName} 👋</h1>
+        <h1 className="" >Hello {UserName} 👋</h1>
+<hr />
 
-<div class="main">
+<div className="boxes">
+    <div className="box" onClick={()=> setisAdd(!isAdd) }>
+            <img src="https://st3.depositphotos.com/1915171/32517/v/950/depositphotos_325177164-stock-illustration-add-shopping-cart-line-icon.jpg" alt= " " />
+    <h3>Add Your Products</h3>
+    </div>
+    <div className="box" onClick={()=> setisProducts(!isProducts)}>
+        <img src="https://previews.123rf.com/images/abscent/abscent1706/abscent170600068/80125240-paper-shopping-bag-full-of-groceries-products-grocery-store-supermarket-fresh-organic-food-and-drink.jpg" alt=" " />
+        <h3> Your Products</h3>
+    </div>
 
-<div class="gg">
+    <div className="box" onClick={()=> history.push('/')  }>
+    <img src="https://static.vecteezy.com/system/resources/previews/001/222/484/non_2x/e-commerce-online-shopping-concept-vector.jpg" alt= " " />
+        <h3> GO to Homepage</h3>
+
+    </div>
+</div>
+{isProducts ? (
+    <>
+    <div className="boxess">
+    <h3>Your All Products         <svg className="" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/></svg>
+    :    </h3>
+    
+    {Shopdata ? Shopdata.map((Product , index)=>
+    <>
+
+<div className="shopproducts">
+<img src={Product.Image1} alt=" " />
+<div>
+
+<h3>{Product.Name}</h3>
+<h4>{Product.Price}</h4>
+</div>
+</div>
+    
+     
+    {/* <CategoryItem Product={Product} key={index}/>   */}
+</>
+     ) : ""}
+     </div>
+</>
+ ) : ( " ")}
+
+{isAdd ? ( 
+    <>
+    <div class="main">
+
+
+    <div class="sec">
+    Category  :
+    <div class="gg">
 
 
 <select name="mySelect" id="mySelect">
@@ -139,6 +206,8 @@ function AddFeature(){
   
      
   </div>
+</div>
+
 
 <br />
 <div class="sec">
@@ -199,8 +268,12 @@ Brand :
 
 
 </div>
-
 <button onClick={insert}>Submit</button>
+</>
+) : ( " ")}
+
+
+
 <br />
 
  {isSumit ? ( 
