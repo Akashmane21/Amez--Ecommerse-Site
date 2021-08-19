@@ -2,15 +2,15 @@
     // text-align: center;
     padding: 20px;
     // background-image: url("https://miro.medium.com/max/3002/1*dP81IJq-tGFxy1rIK3RYsg.png");
-// background-color: #eaeded;
-background-image: linear-gradient(to right, rgb(26, 158, 136) , rgb(176, 104, 218));
+background-color: #eaeded;
+background-image: linear-g/radient(to right, rgb(26, 158, 136) , rgb(176, 104, 218));
 
     height: 120vh;
     h2{
         font-size: 52px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-weight: 600;
-        color: rgb(255, 0, 0);
+        color: #000000;
         // text-transform: uppercase;
     }
 }
@@ -20,8 +20,11 @@ background-image: linear-gradient(to right, rgb(26, 158, 136) , rgb(176, 104, 21
     // align-items: center;
     padding: 10px;
     background-color: white;
+    // border: 1px solid rgb(90, 86, 86);
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0px 10px 30px -10px rgb(93, 93, 94);
+
     width: 220px;
     img{
         height: 150px;
