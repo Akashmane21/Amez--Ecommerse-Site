@@ -31,7 +31,7 @@ function Orders() {
       const reversed = Products_List.reverse()
   
       
-var AllOrdersdata = []
+      var AllOrdersdata = []
       for(var i=0 ; i<reversed.length ; i++ ){
 
        
@@ -39,7 +39,7 @@ var AllOrdersdata = []
         var Products = JSON.stringify(reversed[i].Product_info)
         console.log(Products);
 
-    var AllData={
+        var AllData={
           Date_time:reversed[i].Date_time,
           Address : reversed[i].Address,
           Name:reversed[i].Name,
@@ -64,6 +64,7 @@ var AllOrdersdata = []
     })
 // eslint-disable-next-line
   }, [])
+
 
 
   return (

@@ -26,7 +26,7 @@ function Choose() {
     <>
       <div className="Choose">
         <Fade top>
-          <h2>Login as . </h2>
+          <h2>Login as - </h2>
         </Fade>
         <div className="boxes">
           <Fade left>
